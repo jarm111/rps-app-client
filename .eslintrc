@@ -1,0 +1,17 @@
+{
+    "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+		"no-console": [
+            "warn"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": "error"
+    }
+}
