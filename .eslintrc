@@ -1,17 +1,8 @@
 {
-    "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
+    "extends": ["react-app", "eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
 		"no-console": [
             "warn"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": "error"
+        ]
     }
 }
