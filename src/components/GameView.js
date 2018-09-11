@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Alert, Badge } from 'reactstrap';
+import { Alert, Badge } from 'reactstrap';
+import PlayerRpsButtons from './PlayerRpsButtons';
 
 const GameView = props => (
   <div className="container">
@@ -15,13 +16,7 @@ const GameView = props => (
         <Alert color="success">WIN</Alert>
       </div>
     </div>
-    <div className="row">
-      <div className="col">
-        <Button color="primary">ROCK</Button>
-        <Button color="primary">PAPER</Button>
-        <Button color="primary">SCISSORS</Button>
-      </div>
-    </div>
+    <PlayerRpsButtons />
   </div>
 );
 
