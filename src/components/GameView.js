@@ -1,16 +1,11 @@
 import React from 'react';
-import { Alert, Badge } from 'reactstrap';
+import { Alert } from 'reactstrap';
+import OpponentRpsIcons from './OpponentRpsIcons';
 import PlayerRpsButtons from './PlayerRpsButtons';
 
 const GameView = props => (
   <div className="container">
-    <div className="row">
-      <div className="col">
-        <Badge color="secondary">ROCK</Badge>
-        <Badge color="info">PAPER</Badge>
-        <Badge color="secondary">SCISSORS</Badge>
-      </div>
-    </div>
+    <OpponentRpsIcons />
     <div className="row">
       <div className="col">
         <Alert color="success">WIN</Alert>
