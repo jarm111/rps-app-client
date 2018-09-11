@@ -5,7 +5,7 @@ import PlayerRpsButtons from './PlayerRpsButtons';
 
 const GameView = props => (
   <div className="container">
-    <OpponentRpsIcons />
+    <OpponentRpsIcons selected="paper" />
     <GameStatusText status="tie" />
     <PlayerRpsButtons />
   </div>
