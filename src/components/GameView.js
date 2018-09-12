@@ -6,13 +6,15 @@ import PlayerRpsButtons from './PlayerRpsButtons';
 class GameView extends React.Component {
   constructor(props) {
     super(props);
+
     this.getInitialState = this.getInitialState.bind(this);
-    this.state = this.getInitialState();
     this.handlePlayerRpsButtonClick = this.handlePlayerRpsButtonClick.bind(
       this
     );
     this.drawOpponentSelection = this.drawOpponentSelection.bind(this);
     this.calculateRoundResult = this.calculateRoundResult.bind(this);
+
+    this.state = this.getInitialState();
   }
 
   getInitialState() {
@@ -66,7 +68,10 @@ class GameView extends React.Component {
       <div className="container">
         <OpponentRpsIcons selected={this.state.opponentSelection} />
         <GameStatusText status={this.state.result} />
-        <PlayerRpsButtons onClick={this.handlePlayerRpsButtonClick} />
+        <PlayerRpsButtons
+          selected={this.state.playerSelection}
+          onClick={this.handlePlayerRpsButtonClick}
+        />
       </div>
     );
   }
