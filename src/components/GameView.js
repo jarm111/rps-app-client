@@ -44,7 +44,7 @@ class GameView extends React.Component {
       return Math.floor(Math.random() * (max - min)) + min;
     };
 
-    return Rps.get(getRandomInt(0, 3));
+    return Rps.get(getRandomInt(1, 4));
   }
 
   calculateRoundResult(playerSelection, opponentSelection) {
