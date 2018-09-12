@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
+import Rps from '../constants/Rps';
 
 const PlayerRpsButtons = props => {
   const selectedColor = 'info';
@@ -10,20 +11,20 @@ const PlayerRpsButtons = props => {
     <div className="row">
       <div className="col">
         <Button
-          color={props.selected === 'rock' ? selectedColor : defaultColor}
-          onClick={() => props.onClick('rock')}
+          color={props.selected === Rps.Rock ? selectedColor : defaultColor}
+          onClick={() => props.onClick(Rps.Rock)}
         >
           ROCK
         </Button>
         <Button
-          color={props.selected === 'paper' ? selectedColor : defaultColor}
-          onClick={() => props.onClick('paper')}
+          color={props.selected === Rps.Paper ? selectedColor : defaultColor}
+          onClick={() => props.onClick(Rps.Paper)}
         >
           PAPER
         </Button>
         <Button
-          color={props.selected === 'scissors' ? selectedColor : defaultColor}
-          onClick={() => props.onClick('scissors')}
+          color={props.selected === Rps.Scissors ? selectedColor : defaultColor}
+          onClick={() => props.onClick(Rps.Scissors)}
         >
           SCISSORS
         </Button>
@@ -34,7 +35,7 @@ const PlayerRpsButtons = props => {
 
 PlayerRpsButtons.propTypes = {
   onClick: PropTypes.func,
-  selected: PropTypes.string
+  selected: PropTypes.object
 };
 
 export default PlayerRpsButtons;

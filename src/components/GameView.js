@@ -2,6 +2,7 @@ import React from 'react';
 import OpponentRpsIcons from './OpponentRpsIcons';
 import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
+import Rps from '../constants/Rps';
 
 class GameView extends React.Component {
   constructor(props) {
@@ -36,8 +37,6 @@ class GameView extends React.Component {
   }
 
   drawOpponentSelection() {
-    const rps = ['rock', 'paper', 'scissors'];
-
     //The maximum is exclusive and the minimum is inclusive
     const getRandomInt = (min, max) => {
       min = Math.ceil(min);
@@ -45,7 +44,7 @@ class GameView extends React.Component {
       return Math.floor(Math.random() * (max - min)) + min;
     };
 
-    return rps[getRandomInt(0, 3)];
+    return Rps.get(getRandomInt(0, 3));
   }
 
   calculateRoundResult(playerSelection, opponentSelection) {
@@ -53,9 +52,9 @@ class GameView extends React.Component {
       return 'tie';
     }
     if (
-      (playerSelection === 'scissors' && opponentSelection === 'paper') ||
-      (playerSelection === 'paper' && opponentSelection === 'rock') ||
-      (playerSelection === 'rock' && opponentSelection === 'scissors')
+      (playerSelection === Rps.Scissors && opponentSelection === Rps.Paper) ||
+      (playerSelection === Rps.Paper && opponentSelection === Rps.Rock) ||
+      (playerSelection === Rps.Rock && opponentSelection === Rps.Scissors)
     ) {
       return 'win';
     } else {
