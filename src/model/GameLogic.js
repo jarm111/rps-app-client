@@ -1,18 +1,19 @@
 import Rps from '../constants/Rps';
+import GameStatus from '../constants/GameStatus';
 
 class GameLogic {
   static calculateRoundResult(playerSelection, opponentSelection) {
     if (playerSelection === opponentSelection) {
-      return 'tie';
+      return GameStatus.Tie;
     }
     if (
       (playerSelection === Rps.Scissors && opponentSelection === Rps.Paper) ||
       (playerSelection === Rps.Paper && opponentSelection === Rps.Rock) ||
       (playerSelection === Rps.Rock && opponentSelection === Rps.Scissors)
     ) {
-      return 'win';
+      return GameStatus.Win;
     } else {
-      return 'loss';
+      return GameStatus.Loss;
     }
   }
 

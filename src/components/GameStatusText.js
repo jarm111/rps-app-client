@@ -1,24 +1,25 @@
 import React from 'react';
 import { Row, Col, Alert } from 'reactstrap';
 import PropTypes from 'prop-types';
+import GameStatus from '../constants/GameStatus';
 
 const GameStatusText = props => {
   let color = '';
   let text = '';
   switch (props.status) {
-    case 'choose':
+    case GameStatus.Init:
       color = 'info';
       text = 'CHOOSE';
       break;
-    case 'win':
+    case GameStatus.Win:
       color = 'success';
       text = 'WIN';
       break;
-    case 'loss':
+    case GameStatus.Loss:
       color = 'danger';
       text = 'LOSS';
       break;
-    case 'tie':
+    case GameStatus.Tie:
       color = 'warning';
       text = 'TIE';
       break;
@@ -36,7 +37,7 @@ const GameStatusText = props => {
 };
 
 GameStatusText.propTypes = {
-  status: PropTypes.string.isRequired
+  status: PropTypes.object.isRequired
 };
 
 export default GameStatusText;

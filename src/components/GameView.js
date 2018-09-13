@@ -5,6 +5,7 @@ import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
 import GameLogic from '../model/GameLogic';
 import ScoreBox from './ScoreBox';
+import GameStatus from '../constants/GameStatus';
 
 class GameView extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class GameView extends React.Component {
     return {
       opponentSelection: null,
       playerSelection: null,
-      result: 'choose'
+      result: GameStatus.Init
     };
   }
 
