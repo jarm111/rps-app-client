@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Rps from '../constants/Rps';
 
@@ -8,8 +8,8 @@ const PlayerRpsButtons = props => {
   const defaultColor = 'secondary';
 
   return (
-    <div className="row">
-      <div className="col">
+    <Row>
+      <Col>
         <Button
           color={props.selected === Rps.Rock ? selectedColor : defaultColor}
           onClick={() => props.onClick(Rps.Rock)}
@@ -28,8 +28,8 @@ const PlayerRpsButtons = props => {
         >
           SCISSORS
         </Button>
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge } from 'reactstrap';
+import { Row, Col, Badge } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Rps from '../constants/Rps';
 
@@ -8,8 +8,8 @@ const OpponentRpsIcons = props => {
   const defaultColor = 'secondary';
 
   return (
-    <div className="row">
-      <div className="col">
+    <Row>
+      <Col>
         <Badge
           color={props.selected === Rps.Rock ? selectedColor : defaultColor}
         >
@@ -25,8 +25,8 @@ const OpponentRpsIcons = props => {
         >
           SCISSORS
         </Badge>
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

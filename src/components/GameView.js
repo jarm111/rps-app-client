@@ -1,8 +1,10 @@
 import React from 'react';
+import { Container, Row } from 'reactstrap';
 import OpponentRpsIcons from './OpponentRpsIcons';
 import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
 import GameLogic from '../model/GameLogic';
+import ScoreBox from './ScoreBox';
 
 class GameView extends React.Component {
   constructor(props) {
@@ -36,14 +38,14 @@ class GameView extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <Container>
         <OpponentRpsIcons selected={this.state.opponentSelection} />
         <GameStatusText status={this.state.result} />
         <PlayerRpsButtons
           selected={this.state.playerSelection}
           onClick={this.handlePlayerRpsButtonClick}
         />
-      </div>
+      </Container>
     );
   }
 }

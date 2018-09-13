@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from 'reactstrap';
+import { Row, Col, Alert } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 const GameStatusText = props => {
@@ -27,11 +27,11 @@ const GameStatusText = props => {
   }
 
   return (
-    <div className="row">
-      <div className="col">
+    <Row>
+      <Col>
         <Alert color={color}>{text}</Alert>
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 };
 
