@@ -6,6 +6,7 @@ import PlayerRpsButtons from './PlayerRpsButtons';
 import GameLogic from '../model/GameLogic';
 import ScoreBox from './ScoreBox';
 import GameStatus from '../constants/GameStatus';
+import ScoreLogic from '../model/ScoreLogic';
 
 class GameView extends React.Component {
   constructor(props) {
@@ -23,7 +24,9 @@ class GameView extends React.Component {
     return {
       opponentSelection: null,
       playerSelection: null,
-      result: GameStatus.Init
+      result: GameStatus.Init,
+      currentScore: 0,
+      bestScore: 0
     };
   }
 
@@ -33,7 +36,15 @@ class GameView extends React.Component {
     this.setState({
       playerSelection: selection,
       opponentSelection: opponentSelection,
-      result: result
+      result: result,
+      currentScore: ScoreLogic.calculateCurrentScore(
+        this.state.currentScore,
+        result
+      ),
+      bestScore: ScoreLogic.calculateBestScore(
+        this.state.currentScore,
+        this.state.bestScore
+      )
     });
   }
 
@@ -41,8 +52,8 @@ class GameView extends React.Component {
     return (
       <Container>
         <Row>
-          <ScoreBox text="Best Streak" score={10} />
-          <ScoreBox text="Current Streak" score={0} />
+          <ScoreBox text="Best Streak" score={this.state.bestScore} />
+          <ScoreBox text="Current Streak" score={this.state.currentScore} />
         </Row>
         <OpponentRpsIcons selected={this.state.opponentSelection} />
         <GameStatusText status={this.state.result} />
