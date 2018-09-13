@@ -30,9 +30,12 @@ class GameView extends React.Component {
     };
   }
 
-  handlePlayerRpsButtonClick(selection) {
+  handlePlayerRpsButtonClick(playerSelection) {
     const opponentSelection = GameLogic.drawOpponentSelection();
-    const result = GameLogic.calculateRoundResult(selection, opponentSelection);
+    const result = GameLogic.calculateRoundResult(
+      playerSelection,
+      opponentSelection
+    );
     const currentScore = ScoreLogic.calculateCurrentScore(
       this.state.currentScore,
       result
@@ -42,7 +45,7 @@ class GameView extends React.Component {
       this.state.bestScore
     );
     this.setState({
-      playerSelection: selection,
+      playerSelection: playerSelection,
       opponentSelection: opponentSelection,
       result: result,
       currentScore: currentScore,
