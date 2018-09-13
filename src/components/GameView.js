@@ -39,6 +39,10 @@ class GameView extends React.Component {
   render() {
     return (
       <Container>
+        <Row>
+          <ScoreBox text="Best Streak" score={10} />
+          <ScoreBox text="Current Streak" score={0} />
+        </Row>
         <OpponentRpsIcons selected={this.state.opponentSelection} />
         <GameStatusText status={this.state.result} />
         <PlayerRpsButtons
