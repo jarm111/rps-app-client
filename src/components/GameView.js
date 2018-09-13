@@ -2,7 +2,7 @@ import React from 'react';
 import OpponentRpsIcons from './OpponentRpsIcons';
 import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
-import Rps from '../constants/Rps';
+import GameLogic from '../model/GameLogic';
 
 class GameView extends React.Component {
   constructor(props) {
@@ -12,8 +12,6 @@ class GameView extends React.Component {
     this.handlePlayerRpsButtonClick = this.handlePlayerRpsButtonClick.bind(
       this
     );
-    this.drawOpponentSelection = this.drawOpponentSelection.bind(this);
-    this.calculateRoundResult = this.calculateRoundResult.bind(this);
 
     this.state = this.getInitialState();
   }
@@ -27,39 +25,13 @@ class GameView extends React.Component {
   }
 
   handlePlayerRpsButtonClick(selection) {
-    const opponentSelection = this.drawOpponentSelection();
-    const result = this.calculateRoundResult(selection, opponentSelection);
+    const opponentSelection = GameLogic.drawOpponentSelection();
+    const result = GameLogic.calculateRoundResult(selection, opponentSelection);
     this.setState({
       playerSelection: selection,
       opponentSelection: opponentSelection,
       result: result
     });
-  }
-
-  drawOpponentSelection() {
-    //The maximum is exclusive and the minimum is inclusive
-    const getRandomInt = (min, max) => {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min)) + min;
-    };
-
-    return Rps.get(getRandomInt(1, 4));
-  }
-
-  calculateRoundResult(playerSelection, opponentSelection) {
-    if (playerSelection === opponentSelection) {
-      return 'tie';
-    }
-    if (
-      (playerSelection === Rps.Scissors && opponentSelection === Rps.Paper) ||
-      (playerSelection === Rps.Paper && opponentSelection === Rps.Rock) ||
-      (playerSelection === Rps.Rock && opponentSelection === Rps.Scissors)
-    ) {
-      return 'win';
-    } else {
-      return 'loss';
-    }
   }
 
   render() {
