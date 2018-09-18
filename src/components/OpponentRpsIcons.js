@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Badge } from 'reactstrap';
 import PropTypes from 'prop-types';
-import Rps from '../constants/Rps';
+import { Rps } from '../model/enums';
 
 const OpponentRpsIcons = props => {
   const selectedColor = 'info';

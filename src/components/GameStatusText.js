@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Alert } from 'reactstrap';
 import PropTypes from 'prop-types';
-import GameStatus from '../constants/GameStatus';
+import { GameStatus } from '../model/enums';
 
 const GameStatusText = props => {
   let color = '';

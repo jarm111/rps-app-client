@@ -5,7 +5,7 @@ import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
 import GameLogic from '../model/GameLogic';
 import ScoreBox from './ScoreBox';
-import GameStatus from '../constants/GameStatus';
+import { GameStatus } from '../model/enums';
 import ScoreLogic from '../model/ScoreLogic';
 
 class GameView extends React.Component {

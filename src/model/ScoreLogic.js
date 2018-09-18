@@ -1,4 +1,4 @@
-import GameStatus from '../constants/GameStatus';
+import { GameStatus } from '../model/enums';
 
 class ScoreLogic {
   static calculateCurrentScore(currentScore, gameResult) {

@@ -1,5 +1,4 @@
-import Rps from '../constants/Rps';
-import GameStatus from '../constants/GameStatus';
+import { GameStatus, Rps } from '../model/enums';
 
 class GameLogic {
   static calculateRoundResult(playerSelection, opponentSelection) {
