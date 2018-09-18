@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row } from 'reactstrap';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import OpponentRpsIcons from './OpponentRpsIcons';
 import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
@@ -9,25 +8,8 @@ import GameLogic from '../model/GameLogic';
 import ScoreBox from './ScoreBox';
 import { GameStatus } from '../model/enums';
 import ScoreLogic from '../model/ScoreLogic';
-import { setBestScore, setCurrentScore } from '../model/actions';
 
-const mapStateToProps = state => {
-  return {
-    bestScore: state.score.bestScore,
-    currentScore: state.score.currentScore
-  };
-};
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    setScore: (bestScore, currentScore) => {
-      dispatch(setBestScore(bestScore));
-      dispatch(setCurrentScore(currentScore));
-    }
-  };
-};
-
-class ConnectedGameView extends React.Component {
+class GameView extends React.Component {
   constructor(props) {
     super(props);
 
@@ -89,15 +71,10 @@ class ConnectedGameView extends React.Component {
   }
 }
 
-ConnectedGameView.propTypes = {
+GameView.propTypes = {
   bestScore: PropTypes.number.isRequired,
   currentScore: PropTypes.number.isRequired,
   setScore: PropTypes.func.isRequired
 };
-
-const GameView = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ConnectedGameView);
 
 export default GameView;
