@@ -46,9 +46,7 @@ class GameView extends React.Component {
     this.setState({
       playerSelection: playerSelection,
       opponentSelection: opponentSelection,
-      result: result,
-      currentScore: currentScore,
-      bestScore: bestScore
+      result: result
     });
     this.props.setScore(bestScore, currentScore);
   }
