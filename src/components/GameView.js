@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Row } from 'reactstrap';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import OpponentRpsIcons from './OpponentRpsIcons';
 import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
@@ -7,8 +9,25 @@ import GameLogic from '../model/GameLogic';
 import ScoreBox from './ScoreBox';
 import { GameStatus } from '../model/enums';
 import ScoreLogic from '../model/ScoreLogic';
+import { setBestScore, setCurrentScore } from '../model/actions';
 
-class GameView extends React.Component {
+const mapStateToProps = state => {
+  return {
+    bestScore: state.score.bestScore,
+    currentScore: state.score.currentScore
+  };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    setScore: (bestScore, currentScore) => {
+      dispatch(setBestScore(bestScore));
+      dispatch(setCurrentScore(currentScore));
+    }
+  };
+};
+
+class ConnectedGameView extends React.Component {
   constructor(props) {
     super(props);
 
@@ -24,9 +43,7 @@ class GameView extends React.Component {
     return {
       opponentSelection: null,
       playerSelection: null,
-      result: GameStatus.Init,
-      currentScore: 0,
-      bestScore: 0
+      result: GameStatus.Init
     };
   }
 
@@ -37,12 +54,12 @@ class GameView extends React.Component {
       opponentSelection
     );
     const currentScore = ScoreLogic.calculateCurrentScore(
-      this.state.currentScore,
+      this.props.currentScore,
       result
     );
     const bestScore = ScoreLogic.calculateBestScore(
-      this.state.currentScore,
-      this.state.bestScore
+      this.props.currentScore,
+      this.props.bestScore
     );
     this.setState({
       playerSelection: playerSelection,
@@ -51,14 +68,15 @@ class GameView extends React.Component {
       currentScore: currentScore,
       bestScore: bestScore
     });
+    this.props.setScore(bestScore, currentScore);
   }
 
   render() {
     return (
       <Container>
         <Row>
-          <ScoreBox text="Best Streak" score={this.state.bestScore} />
-          <ScoreBox text="Current Streak" score={this.state.currentScore} />
+          <ScoreBox text="Best Streak" score={this.props.bestScore} />
+          <ScoreBox text="Current Streak" score={this.props.currentScore} />
         </Row>
         <OpponentRpsIcons selected={this.state.opponentSelection} />
         <GameStatusText status={this.state.result} />
@@ -70,5 +88,16 @@ class GameView extends React.Component {
     );
   }
 }
+
+ConnectedGameView.propTypes = {
+  bestScore: PropTypes.number.isRequired,
+  currentScore: PropTypes.number.isRequired,
+  setScore: PropTypes.func.isRequired
+};
+
+const GameView = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ConnectedGameView);
 
 export default GameView;
