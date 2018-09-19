@@ -1,11 +1,12 @@
-import { ActionTypes } from './enums';
+export const SET_BEST_SCORE = 'SET_BEST_SCORE';
+export const SET_CURRENT_SCORE = 'SET_CURRENT_SCORE';
 
 export const setBestScore = score => ({
-  type: ActionTypes.SET_BEST_SCORE,
+  type: SET_BEST_SCORE,
   score
 });
 
 export const setCurrentScore = score => ({
-  type: ActionTypes.SET_CURRENT_SCORE,
+  type: SET_CURRENT_SCORE,
   score
 });

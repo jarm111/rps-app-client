@@ -1,5 +1,5 @@
-import { ActionTypes } from './enums';
 import { combineReducers } from 'redux';
+import { SET_BEST_SCORE, SET_CURRENT_SCORE } from './actions';
 
 const initialScore = {
   bestScore: 0,
@@ -8,9 +8,9 @@ const initialScore = {
 
 const score = (state = initialScore, action) => {
   switch (action.type) {
-    case ActionTypes.SET_BEST_SCORE:
+    case SET_BEST_SCORE:
       return { ...state, bestScore: action.score };
-    case ActionTypes.SET_CURRENT_SCORE:
+    case SET_CURRENT_SCORE:
       return { ...state, currentScore: action.score };
     default:
       return state;
