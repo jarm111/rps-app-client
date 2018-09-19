@@ -38,6 +38,8 @@ const round = (state = initialRound, action) => {
       return { ...state, opponentSelection: action.selection };
     case SET_ROUND_RESULT:
       return { ...state, result: action.result };
+    default:
+      return state;
   }
 };
 

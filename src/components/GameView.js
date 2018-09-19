@@ -6,27 +6,15 @@ import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
 import GameLogic from '../model/GameLogic';
 import ScoreBox from './ScoreBox';
-import { GameStatus } from '../model/enums';
 import ScoreLogic from '../model/ScoreLogic';
 
 class GameView extends React.Component {
   constructor(props) {
     super(props);
 
-    this.getInitialState = this.getInitialState.bind(this);
     this.handlePlayerRpsButtonClick = this.handlePlayerRpsButtonClick.bind(
       this
     );
-
-    this.state = this.getInitialState();
-  }
-
-  getInitialState() {
-    return {
-      opponentSelection: null,
-      playerSelection: null,
-      result: GameStatus.Init
-    };
   }
 
   handlePlayerRpsButtonClick(playerSelection) {
@@ -43,12 +31,8 @@ class GameView extends React.Component {
       this.props.currentScore,
       this.props.bestScore
     );
-    this.setState({
-      playerSelection: playerSelection,
-      opponentSelection: opponentSelection,
-      result: result
-    });
     this.props.setScore(bestScore, currentScore);
+    this.props.setRound(playerSelection, opponentSelection, result);
   }
 
   render() {
@@ -58,10 +42,10 @@ class GameView extends React.Component {
           <ScoreBox text="Best Streak" score={this.props.bestScore} />
           <ScoreBox text="Current Streak" score={this.props.currentScore} />
         </Row>
-        <OpponentRpsIcons selected={this.state.opponentSelection} />
-        <GameStatusText status={this.state.result} />
+        <OpponentRpsIcons selected={this.props.opponentSelection} />
+        <GameStatusText status={this.props.result} />
         <PlayerRpsButtons
-          selected={this.state.playerSelection}
+          selected={this.props.playerSelection}
           onClick={this.handlePlayerRpsButtonClick}
         />
       </Container>
@@ -72,7 +56,11 @@ class GameView extends React.Component {
 GameView.propTypes = {
   bestScore: PropTypes.number.isRequired,
   currentScore: PropTypes.number.isRequired,
-  setScore: PropTypes.func.isRequired
+  setScore: PropTypes.func.isRequired,
+  setRound: PropTypes.func.isRequired,
+  opponentSelection: PropTypes.object.isRequired,
+  result: PropTypes.object.isRequired,
+  playerSelection: PropTypes.object.isRequired
 };
 
 export default GameView;

@@ -1,11 +1,20 @@
 import { connect } from 'react-redux';
-import { setBestScore, setCurrentScore } from '../model/actions';
+import {
+  setBestScore,
+  setCurrentScore,
+  setPlayerSelection,
+  setOpponentSelection,
+  setRoundResult
+} from '../model/actions';
 import GameView from '../components/GameView';
 
 const mapStateToProps = state => {
   return {
     bestScore: state.score.bestScore,
-    currentScore: state.score.currentScore
+    currentScore: state.score.currentScore,
+    playerSelection: state.round.playerSelection,
+    opponentSelection: state.round.opponentSelection,
+    result: state.round.result
   };
 };
 
@@ -14,6 +23,11 @@ const mapDispatchToProps = dispatch => {
     setScore: (bestScore, currentScore) => {
       dispatch(setBestScore(bestScore));
       dispatch(setCurrentScore(currentScore));
+    },
+    setRound: (playerSelection, opponentSelection, result) => {
+      dispatch(setPlayerSelection(playerSelection));
+      dispatch(setOpponentSelection(opponentSelection));
+      dispatch(setRoundResult(result));
     }
   };
 };
