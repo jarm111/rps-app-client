@@ -1,9 +1,22 @@
 import { combineReducers } from 'redux';
-import { SET_BEST_SCORE, SET_CURRENT_SCORE } from './actions';
+import { GameStatus } from './enums';
+import {
+  SET_BEST_SCORE,
+  SET_CURRENT_SCORE,
+  SET_PLAYER_SELECTION,
+  SET_OPPONENT_SELECTION,
+  SET_ROUND_RESULT
+} from './actions';
 
 const initialScore = {
   bestScore: 0,
   currentScore: 0
+};
+
+const initialRound = {
+  playerSelection: null,
+  opponentSelection: null,
+  result: GameStatus.Init
 };
 
 const score = (state = initialScore, action) => {
@@ -17,4 +30,17 @@ const score = (state = initialScore, action) => {
   }
 };
 
-export default combineReducers({ score });
+const round = (state = initialRound, action) => {
+  switch (action.type) {
+    case SET_PLAYER_SELECTION:
+      return { ...state, playerSelection: action.selection };
+    case SET_OPPONENT_SELECTION:
+      return { ...state, opponentSelection: action.selection };
+    case SET_ROUND_RESULT:
+      return { ...state, result: action.result };
+  }
+};
+
+const rootReducer = combineReducers({ score, round });
+
+export default rootReducer;
