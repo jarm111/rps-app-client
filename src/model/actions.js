@@ -1,3 +1,6 @@
+import GameLogic from './GameLogic';
+import ScoreLogic from './ScoreLogic';
+
 export const SET_BEST_SCORE = 'SET_BEST_SCORE';
 export const SET_CURRENT_SCORE = 'SET_CURRENT_SCORE';
 export const SET_PLAYER_SELECTION = 'SET_PLAYER_SELECTION';
@@ -28,3 +31,34 @@ export const setRoundResult = result => ({
   type: SET_ROUND_RESULT,
   result
 });
+
+export const processRound = playerSelection => {
+  return (dispatch, getState) => {
+    dispatch(setPlayerSelection(playerSelection));
+    dispatch(setOpponentSelection(GameLogic.drawOpponentSelection()));
+    dispatch(
+      setRoundResult(
+        GameLogic.calculateRoundResult(
+          getState().round.playerSelection,
+          getState().round.opponentSelection
+        )
+      )
+    );
+    dispatch(
+      setCurrentScore(
+        ScoreLogic.calculateCurrentScore(
+          getState().score.currentScore,
+          getState().round.result
+        )
+      )
+    );
+    dispatch(
+      setBestScore(
+        ScoreLogic.calculateBestScore(
+          getState().score.currentScore,
+          getState().score.bestScore
+        )
+      )
+    );
+  };
+};
