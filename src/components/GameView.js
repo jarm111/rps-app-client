@@ -6,24 +6,20 @@ import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
 import ScoreBox from './ScoreBox';
 
-class GameView extends React.Component {
-  render() {
-    return (
-      <Container>
-        <Row>
-          <ScoreBox text="Best Streak" score={this.props.bestScore} />
-          <ScoreBox text="Current Streak" score={this.props.currentScore} />
-        </Row>
-        <OpponentRpsIcons selected={this.props.opponentSelection} />
-        <GameStatusText status={this.props.result} />
-        <PlayerRpsButtons
-          selected={this.props.playerSelection}
-          onClick={this.props.handlePlayerRpsButtonClick}
-        />
-      </Container>
-    );
-  }
-}
+const GameView = props => (
+  <Container>
+    <Row>
+      <ScoreBox text="Best Streak" score={props.bestScore} />
+      <ScoreBox text="Current Streak" score={props.currentScore} />
+    </Row>
+    <OpponentRpsIcons selected={props.opponentSelection} />
+    <GameStatusText status={props.result} />
+    <PlayerRpsButtons
+      selected={props.playerSelection}
+      onClick={props.handlePlayerRpsButtonClick}
+    />
+  </Container>
+);
 
 GameView.propTypes = {
   bestScore: PropTypes.number.isRequired,
