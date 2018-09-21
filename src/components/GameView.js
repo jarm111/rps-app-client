@@ -28,9 +28,9 @@ class GameView extends React.Component {
 GameView.propTypes = {
   bestScore: PropTypes.number.isRequired,
   currentScore: PropTypes.number.isRequired,
-  opponentSelection: PropTypes.object.isRequired,
+  opponentSelection: PropTypes.object,
   result: PropTypes.object.isRequired,
-  playerSelection: PropTypes.object.isRequired,
+  playerSelection: PropTypes.object,
   handlePlayerRpsButtonClick: PropTypes.func.isRequired
 };
 
