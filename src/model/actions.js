@@ -47,7 +47,7 @@ export const processRound = playerSelection => {
     dispatch(
       setCurrentScore(
         ScoreLogic.calculateCurrentScore(
-          getState().score.currentScore,
+          getState().score.current,
           getState().round.result
         )
       )
@@ -55,8 +55,8 @@ export const processRound = playerSelection => {
     dispatch(
       setBestScore(
         ScoreLogic.calculateBestScore(
-          getState().score.currentScore,
-          getState().score.bestScore
+          getState().score.current,
+          getState().score.best
         )
       )
     );

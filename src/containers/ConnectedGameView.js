@@ -4,8 +4,8 @@ import GameView from '../components/GameView';
 
 const mapStateToProps = state => {
   return {
-    bestScore: state.score.bestScore,
-    currentScore: state.score.currentScore,
+    bestScore: state.score.best,
+    currentScore: state.score.current,
     playerSelection: state.round.playerSelection,
     opponentSelection: state.round.opponentSelection,
     result: state.round.result

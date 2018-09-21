@@ -9,8 +9,8 @@ import {
 } from './actions';
 
 const initialScore = {
-  bestScore: 0,
-  currentScore: 0
+  best: 0,
+  current: 0
 };
 
 const initialRound = {
@@ -22,9 +22,9 @@ const initialRound = {
 const score = (state = initialScore, action) => {
   switch (action.type) {
     case SET_BEST_SCORE:
-      return { ...state, bestScore: action.score };
+      return { ...state, best: action.score };
     case SET_CURRENT_SCORE:
-      return { ...state, currentScore: action.score };
+      return { ...state, current: action.score };
     default:
       return state;
   }
