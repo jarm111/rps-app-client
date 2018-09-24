@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Col, Container, Row } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import ScoreBox from './ScoreBox';
 
 const MenuView = props => (
@@ -16,12 +17,16 @@ const MenuView = props => (
     </Row>
     <Row>
       <Col>
-        <Button>PLAY</Button>
+        <Link className="btn btn-secondary" to="/play">
+          PLAY
+        </Link>
       </Col>
     </Row>
     <Row>
       <Col>
-        <Button>LOGIN</Button>
+        <Link className="btn btn-secondary" to="/login">
+          LOGIN
+        </Link>
       </Col>
     </Row>
     <Row>
