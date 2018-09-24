@@ -34,7 +34,7 @@ class NavigationBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/home/">HOME</NavLink>
+                <NavLink href="/">HOME</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/play/">PLAY</NavLink>
