@@ -2,6 +2,7 @@ import React from 'react';
 import ConnectedGameView from '../containers/ConnectedGameView';
 import NavigationBar from './NavigationBar';
 import MenuView from './MenuView';
+import LoginView from './LoginView';
 import './App.css';
 
 const App = props => (
@@ -12,6 +13,7 @@ const App = props => (
     </header>
     <MenuView />
     <ConnectedGameView />
+    <LoginView />
   </div>
 );
 
