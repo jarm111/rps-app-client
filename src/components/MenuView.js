@@ -1,20 +1,28 @@
 import React from 'react';
-import { Button, Container, Row } from 'reactstrap';
+import { Button, Col, Container, Row } from 'reactstrap';
 import ScoreBox from './ScoreBox';
 
 const MenuView = props => (
   <Container>
     <Row>
-      <h1>Rock-Paper-Scissors</h1>
+      <Col>
+        <h1>Rock-Paper-Scissors</h1>
+      </Col>
     </Row>
     <Row>
-      <h5>by Jarmo</h5>
+      <Col>
+        <h5>by Jarmo</h5>
+      </Col>
     </Row>
     <Row>
-      <Button>PLAY</Button>
+      <Col>
+        <Button>PLAY</Button>
+      </Col>
     </Row>
     <Row>
-      <Button>LOGIN</Button>
+      <Col>
+        <Button>LOGIN</Button>
+      </Col>
     </Row>
     <Row>
       <ScoreBox text="Best Streak" score={0} />

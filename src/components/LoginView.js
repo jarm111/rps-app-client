@@ -13,7 +13,9 @@ import {
 const LoginView = props => (
   <Container>
     <Row>
-      <h2>Login</h2>
+      <Col>
+        <h2>Login</h2>
+      </Col>
     </Row>
     <Form>
       <FormGroup row>
