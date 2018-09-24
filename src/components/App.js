@@ -1,6 +1,7 @@
 import React from 'react';
 import ConnectedGameView from '../containers/ConnectedGameView';
 import { Switch, Route } from 'react-router-dom';
+import paths from '../model/paths';
 import NavigationBar from './NavigationBar';
 import MenuView from './MenuView';
 import LoginView from './LoginView';
@@ -13,9 +14,9 @@ const App = props => (
       <h1 className="App-title">Welcome to RPM</h1>
     </header>
     <Switch>
-      <Route exact path="/" component={MenuView} />
-      <Route path="/play" component={ConnectedGameView} />
-      <Route path="/login" component={LoginView} />
+      <Route exact path={paths.home} component={MenuView} />
+      <Route path={paths.play} component={ConnectedGameView} />
+      <Route path={paths.login} component={LoginView} />
     </Switch>
   </div>
 );

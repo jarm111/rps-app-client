@@ -1,13 +1,7 @@
 import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem
-} from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
+import { Link, NavLink } from 'react-router-dom';
+import paths from '../model/paths';
 
 class NavigationBar extends React.Component {
   constructor(props) {
@@ -29,7 +23,9 @@ class NavigationBar extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">RPS</NavbarBrand>
+          <Link className="navbar-brand" to={paths.home}>
+            RPS
+          </Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -38,7 +34,7 @@ class NavigationBar extends React.Component {
                   exact
                   className="nav-link"
                   activeClassName="active"
-                  to="/"
+                  to={paths.home}
                 >
                   HOME
                 </NavLink>
@@ -47,7 +43,7 @@ class NavigationBar extends React.Component {
                 <NavLink
                   className="nav-link"
                   activeClassName="active"
-                  to="/play"
+                  to={paths.play}
                 >
                   PLAY
                 </NavLink>
@@ -56,7 +52,7 @@ class NavigationBar extends React.Component {
                 <NavLink
                   className="nav-link"
                   activeClassName="active"
-                  to="/login"
+                  to={paths.login}
                 >
                   LOGIN
                 </NavLink>
