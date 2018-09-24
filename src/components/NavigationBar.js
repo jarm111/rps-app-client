@@ -5,9 +5,9 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink
+  NavItem
 } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 
 class NavigationBar extends React.Component {
   constructor(props) {
@@ -34,13 +34,32 @@ class NavigationBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">HOME</NavLink>
+                <NavLink
+                  exact
+                  className="nav-link"
+                  activeClassName="active"
+                  to="/"
+                >
+                  HOME
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/play/">PLAY</NavLink>
+                <NavLink
+                  className="nav-link"
+                  activeClassName="active"
+                  to="/play"
+                >
+                  PLAY
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/login/">LOGIN</NavLink>
+                <NavLink
+                  className="nav-link"
+                  activeClassName="active"
+                  to="/login"
+                >
+                  LOGIN
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>
