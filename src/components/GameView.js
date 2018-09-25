@@ -12,12 +12,18 @@ const GameView = props => (
       <ScoreBox text="Best Streak" score={props.bestScore} />
       <ScoreBox text="Current Streak" score={props.currentScore} />
     </Row>
-    <OpponentRpsIcons selected={props.opponentSelection} />
-    <GameStatusText status={props.result} />
-    <PlayerRpsButtons
-      selected={props.playerSelection}
-      onClick={props.handlePlayerRpsButtonClick}
-    />
+    <Row>
+      <OpponentRpsIcons selected={props.opponentSelection} />
+    </Row>
+    <Row>
+      <GameStatusText status={props.result} />
+    </Row>
+    <Row>
+      <PlayerRpsButtons
+        selected={props.playerSelection}
+        onClick={props.handlePlayerRpsButtonClick}
+      />
+    </Row>
   </Container>
 );
 

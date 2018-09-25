@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Badge } from 'reactstrap';
+import { Col, Badge } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { Rps } from '../model/enums';
 
@@ -8,25 +8,21 @@ const OpponentRpsIcons = props => {
   const defaultColor = 'secondary';
 
   return (
-    <Row>
-      <Col>
-        <Badge
-          color={props.selected === Rps.Rock ? selectedColor : defaultColor}
-        >
-          ROCK
-        </Badge>
-        <Badge
-          color={props.selected === Rps.Paper ? selectedColor : defaultColor}
-        >
-          PAPER
-        </Badge>
-        <Badge
-          color={props.selected === Rps.Scissors ? selectedColor : defaultColor}
-        >
-          SCISSORS
-        </Badge>
-      </Col>
-    </Row>
+    <Col>
+      <Badge color={props.selected === Rps.Rock ? selectedColor : defaultColor}>
+        ROCK
+      </Badge>
+      <Badge
+        color={props.selected === Rps.Paper ? selectedColor : defaultColor}
+      >
+        PAPER
+      </Badge>
+      <Badge
+        color={props.selected === Rps.Scissors ? selectedColor : defaultColor}
+      >
+        SCISSORS
+      </Badge>
+    </Col>
   );
 };
 

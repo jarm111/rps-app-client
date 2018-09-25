@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Alert } from 'reactstrap';
+import { Col, Alert } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { GameStatus } from '../model/enums';
 
@@ -28,11 +28,9 @@ const GameStatusText = props => {
   }
 
   return (
-    <Row>
-      <Col>
-        <Alert color={color}>{text}</Alert>
-      </Col>
-    </Row>
+    <Col>
+      <Alert color={color}>{text}</Alert>
+    </Col>
   );
 };
 
