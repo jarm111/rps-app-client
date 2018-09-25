@@ -10,9 +10,6 @@ import './App.css';
 const App = props => (
   <div className="App">
     <NavigationBar />
-    <header className="App-header">
-      <h1 className="App-title">Welcome to RPM</h1>
-    </header>
     <Switch>
       <Route exact path={paths.home} component={ConnectedMenuView} />
       <Route path={paths.play} component={ConnectedGameView} />
