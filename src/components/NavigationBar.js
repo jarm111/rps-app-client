@@ -28,7 +28,7 @@ class NavigationBar extends React.Component {
 
   render() {
     return (
-      <Navbar color="dark" dark expand="sm">
+      <Navbar color="dark" dark expand="sm" className="mb-5">
         <Container>
           <Link className="navbar-brand" to={paths.home}>
             RPS

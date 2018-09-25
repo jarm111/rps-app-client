@@ -12,19 +12,19 @@ const MenuView = props => (
         <h1>Rock-Paper-Scissors</h1>
       </Col>
     </Row>
-    <Row>
+    <Row className="mb-3">
       <Col>
         <h5>by Jarmo</h5>
       </Col>
     </Row>
-    <Row>
+    <Row className="mb-2">
       <Col>
         <Link className="btn btn-secondary" to={paths.play}>
           PLAY
         </Link>
       </Col>
     </Row>
-    <Row>
+    <Row className="mb-4">
       <Col>
         <Link className="btn btn-secondary" to={paths.login}>
           LOGIN
