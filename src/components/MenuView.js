@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Col, Container, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import paths from '../model/paths';
@@ -31,9 +32,13 @@ const MenuView = props => (
       </Col>
     </Row>
     <Row>
-      <ScoreBox text="Best Streak" score={0} />
+      <ScoreBox text="Best Streak" score={props.bestScore} />
     </Row>
   </Container>
 );
+
+MenuView.propTypes = {
+  bestScore: PropTypes.number.isRequired
+};
 
 export default MenuView;
