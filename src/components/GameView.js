@@ -8,14 +8,14 @@ import ScoreBox from './ScoreBox';
 
 const GameView = props => (
   <Container>
-    <Row>
+    <Row className="mb-4">
       <ScoreBox text="Best Streak" score={props.bestScore} />
       <ScoreBox text="Current Streak" score={props.currentScore} />
     </Row>
-    <Row>
+    <Row className="mb-4">
       <OpponentRpsIcons selected={props.opponentSelection} />
     </Row>
-    <Row>
+    <Row className="mb-4">
       <GameStatusText status={props.result} />
     </Row>
     <Row>
