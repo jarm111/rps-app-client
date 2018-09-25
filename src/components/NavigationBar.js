@@ -1,5 +1,12 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
+import {
+  Container,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  Nav,
+  NavItem
+} from 'reactstrap';
 import { Link, NavLink } from 'react-router-dom';
 import paths from '../model/paths';
 
@@ -21,8 +28,8 @@ class NavigationBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
+      <Navbar color="dark" dark expand="sm">
+        <Container>
           <Link className="navbar-brand" to={paths.home}>
             RPS
           </Link>
@@ -59,8 +66,8 @@ class NavigationBar extends React.Component {
               </NavItem>
             </Nav>
           </Collapse>
-        </Navbar>
-      </div>
+        </Container>
+      </Navbar>
     );
   }
 }
