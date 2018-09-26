@@ -16,23 +16,23 @@ const PlayerRpsButtons = props => {
       <Button
         color={props.selected === Rps.Rock ? selectedColor : defaultColor}
         onClick={() => props.onClick(Rps.Rock)}
-        className="Rps-button"
+        className="PlayerRpsButtons-button"
       >
-        <img src={rock} className="Rps-icon" alt="rock" />
+        <img src={rock} className="PlayerRpsButtons-img" alt="rock" />
       </Button>
       <Button
         color={props.selected === Rps.Paper ? selectedColor : defaultColor}
         onClick={() => props.onClick(Rps.Paper)}
-        className="Rps-button"
+        className="PlayerRpsButtons-button"
       >
-        <img src={paper} className="Rps-icon" alt="paper" />
+        <img src={paper} className="PlayerRpsButtons-img" alt="paper" />
       </Button>
       <Button
         color={props.selected === Rps.Scissors ? selectedColor : defaultColor}
         onClick={() => props.onClick(Rps.Scissors)}
-        className="Rps-button"
+        className="PlayerRpsButtons-button"
       >
-        <img src={scissors} className="Rps-icon" alt="scissors" />
+        <img src={scissors} className="PlayerRpsButtons-img" alt="scissors" />
       </Button>
     </Col>
   );
