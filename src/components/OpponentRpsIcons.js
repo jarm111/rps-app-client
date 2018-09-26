@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Badge } from 'reactstrap';
+import { Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { Rps } from '../model/enums';
 import rock from '../images/rock.svg';
@@ -8,29 +8,35 @@ import scissors from '../images/scissors.svg';
 import './OpponentRpsIcons.css';
 
 const OpponentRpsIcons = props => {
-  const selectedColor = 'info';
-  const defaultColor = 'secondary';
+  const selectedColor = 'bg-info';
+  const defaultColor = 'bg-secondary';
 
   return (
     <Col>
-      <Badge
-        color={props.selected === Rps.Rock ? selectedColor : defaultColor}
-        className="OpponentRpsIcons-badge"
+      <div
+        className={
+          'OpponentRpsIcons-icon ' +
+          (props.selected === Rps.Rock ? selectedColor : defaultColor)
+        }
       >
         <img src={rock} className="OpponentRpsIcons-img" alt="rock" />
-      </Badge>
-      <Badge
-        color={props.selected === Rps.Paper ? selectedColor : defaultColor}
-        className="OpponentRpsIcons-badge"
+      </div>
+      <div
+        className={
+          'OpponentRpsIcons-icon ' +
+          (props.selected === Rps.Paper ? selectedColor : defaultColor)
+        }
       >
         <img src={paper} className="OpponentRpsIcons-img" alt="paper" />
-      </Badge>
-      <Badge
-        color={props.selected === Rps.Scissors ? selectedColor : defaultColor}
-        className="OpponentRpsIcons-badge"
+      </div>
+      <div
+        className={
+          'OpponentRpsIcons-icon ' +
+          (props.selected === Rps.Scissors ? selectedColor : defaultColor)
+        }
       >
         <img src={scissors} className="OpponentRpsIcons-img" alt="scissors" />
-      </Badge>
+      </div>
     </Col>
   );
 };
