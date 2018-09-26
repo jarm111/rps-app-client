@@ -5,7 +5,7 @@ import './ScoreBox.css';
 
 const ScoreBox = props => (
   <Col>
-    <span className="text-uppercase ScoreBox">
+    <span className="ScoreBox">
       {props.text} <Badge color="secondary">{props.score}</Badge>
     </span>
   </Col>
