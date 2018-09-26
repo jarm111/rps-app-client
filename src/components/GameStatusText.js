@@ -28,8 +28,10 @@ const GameStatusText = props => {
   }
 
   return (
-    <Col>
-      <Alert color={color}>{text}</Alert>
+    <Col xs="6">
+      <Alert color={color} className="a">
+        <h4>{text}</h4>
+      </Alert>
     </Col>
   );
 };

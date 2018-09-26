@@ -20,7 +20,7 @@ const GameView = props => (
     <Row className="mb-4">
       <OpponentRpsIcons selected={props.opponentSelection} />
     </Row>
-    <Row className="mb-4">
+    <Row className="justify-content-center mb-4">
       <GameStatusText status={props.result} />
     </Row>
     <Row>
