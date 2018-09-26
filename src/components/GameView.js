@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row } from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
 import PropTypes from 'prop-types';
 import OpponentRpsIcons from './OpponentRpsIcons';
 import GameStatusText from './GameStatusText';
@@ -12,6 +12,11 @@ const GameView = props => (
       <ScoreBox text="Best Streak" score={props.bestScore} />
       <ScoreBox text="Current Streak" score={props.currentScore} />
     </Row>
+    <Row>
+      <Col>
+        <h5 className="text-danger">OPPONENT</h5>
+      </Col>
+    </Row>
     <Row className="mb-4">
       <OpponentRpsIcons selected={props.opponentSelection} />
     </Row>
@@ -23,6 +28,11 @@ const GameView = props => (
         selected={props.playerSelection}
         onClick={props.handlePlayerRpsButtonClick}
       />
+    </Row>
+    <Row>
+      <Col>
+        <h4 className="text-success mb-4">PLAYER</h4>
+      </Col>
     </Row>
   </Container>
 );
