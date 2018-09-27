@@ -31,7 +31,7 @@ const MenuView = props => (
         </Link>
       </Col>
     </Row>
-    <Row>
+    <Row className="justify-content-md-center">
       <ScoreBox text="Best Streak" score={props.bestScore} />
     </Row>
   </Container>

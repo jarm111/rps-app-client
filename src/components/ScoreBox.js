@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './ScoreBox.css';
 
 const ScoreBox = props => (
-  <Col>
+  <Col sm="6" className="py-2">
     <span className="ScoreBox">
       {props.text} <Badge color="secondary">{props.score}</Badge>
     </span>
