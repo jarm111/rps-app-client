@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { processRound } from '../model/actions';
+import { processRound, resetGame } from '../model/actions';
 import GameView from '../components/GameView';
 
 const mapStateToProps = state => {
@@ -16,6 +16,9 @@ const mapDispatchToProps = dispatch => {
   return {
     handlePlayerRpsButtonClick: playerSelection => {
       dispatch(processRound(playerSelection));
+    },
+    handleUnmount: () => {
+      dispatch(resetGame());
     }
   };
 };

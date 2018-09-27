@@ -1,5 +1,6 @@
 import GameLogic from './GameLogic';
 import ScoreLogic from './ScoreLogic';
+import { GameStatus } from './enums';
 
 export const SET_BEST_SCORE = 'SET_BEST_SCORE';
 export const SET_CURRENT_SCORE = 'SET_CURRENT_SCORE';
@@ -60,5 +61,14 @@ export const processRound = playerSelection => {
         )
       )
     );
+  };
+};
+
+export const resetGame = () => {
+  return (dispatch, getState) => {
+    dispatch(setPlayerSelection(null));
+    dispatch(setOpponentSelection(null));
+    dispatch(setRoundResult(GameStatus.Init));
+    dispatch(setCurrentScore(0));
   };
 };
