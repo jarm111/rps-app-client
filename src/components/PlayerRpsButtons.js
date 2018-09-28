@@ -10,32 +10,24 @@ import './PlayerRpsButtons.css';
 const PlayerRpsButtons = props => {
   const selectedColor = 'info';
   const defaultColor = 'secondary';
+  const images = [rock, paper, scissors];
 
-  return (
-    <Col>
-      <Button
-        color={props.selected === Rps.Rock ? selectedColor : defaultColor}
-        onClick={() => props.onClick(Rps.Rock)}
-        className="PlayerRpsButtons-button"
-      >
-        <img src={rock} className="PlayerRpsButtons-img" alt="rock" />
-      </Button>
-      <Button
-        color={props.selected === Rps.Paper ? selectedColor : defaultColor}
-        onClick={() => props.onClick(Rps.Paper)}
-        className="PlayerRpsButtons-button"
-      >
-        <img src={paper} className="PlayerRpsButtons-img" alt="paper" />
-      </Button>
-      <Button
-        color={props.selected === Rps.Scissors ? selectedColor : defaultColor}
-        onClick={() => props.onClick(Rps.Scissors)}
-        className="PlayerRpsButtons-button"
-      >
-        <img src={scissors} className="PlayerRpsButtons-img" alt="scissors" />
-      </Button>
-    </Col>
-  );
+  const buttons = Rps.enums.map((item, index) => (
+    <Button
+      color={props.selected === item ? selectedColor : defaultColor}
+      onClick={() => props.onClick(item)}
+      className="PlayerRpsButtons-button"
+      key={item.key}
+    >
+      <img
+        src={images[index]}
+        className="PlayerRpsButtons-img"
+        alt={item.key}
+      />
+    </Button>
+  ));
+
+  return <Col>{buttons}</Col>;
 };
 
 PlayerRpsButtons.propTypes = {
