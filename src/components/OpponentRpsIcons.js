@@ -10,35 +10,25 @@ import './OpponentRpsIcons.css';
 const OpponentRpsIcons = props => {
   const selectedColor = 'bg-info';
   const defaultColor = 'bg-secondary';
+  const images = [rock, paper, scissors];
 
-  return (
-    <Col>
-      <div
-        className={
-          'OpponentRpsIcons-icon ' +
-          (props.selected === Rps.Rock ? selectedColor : defaultColor)
-        }
-      >
-        <img src={rock} className="OpponentRpsIcons-img" alt="rock" />
-      </div>
-      <div
-        className={
-          'OpponentRpsIcons-icon ' +
-          (props.selected === Rps.Paper ? selectedColor : defaultColor)
-        }
-      >
-        <img src={paper} className="OpponentRpsIcons-img" alt="paper" />
-      </div>
-      <div
-        className={
-          'OpponentRpsIcons-icon ' +
-          (props.selected === Rps.Scissors ? selectedColor : defaultColor)
-        }
-      >
-        <img src={scissors} className="OpponentRpsIcons-img" alt="scissors" />
-      </div>
-    </Col>
-  );
+  const icons = Rps.enums.map((item, index) => (
+    <div
+      className={
+        'OpponentRpsIcons-icon ' +
+        (props.selected === item ? selectedColor : defaultColor)
+      }
+      key={item.key}
+    >
+      <img
+        src={images[index]}
+        className="OpponentRpsIcons-img"
+        alt={item.key}
+      />
+    </div>
+  ));
+
+  return <Col>{icons}</Col>;
 };
 
 OpponentRpsIcons.propTypes = {
