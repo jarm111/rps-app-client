@@ -7,6 +7,10 @@ import PlayerRpsButtons from './PlayerRpsButtons';
 import ScoreBox from './ScoreBox';
 
 class GameView extends React.Component {
+  componentDidMount() {
+    this.props.handleDidMount();
+  }
+
   componentWillUnmount() {
     this.props.handleUnmount();
   }
@@ -52,7 +56,8 @@ GameView.propTypes = {
   result: PropTypes.object.isRequired,
   playerSelection: PropTypes.object,
   handlePlayerRpsButtonClick: PropTypes.func.isRequired,
-  handleUnmount: PropTypes.func.isRequired
+  handleUnmount: PropTypes.func.isRequired,
+  handleDidMount: PropTypes.func.isRequired
 };
 
 export default GameView;

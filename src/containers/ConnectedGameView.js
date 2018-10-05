@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { processRound, resetGame } from '../model/actions';
+import { processRound, resetGame, fetchBestScore } from '../model/actions';
 import GameView from '../components/GameView';
 
 const mapStateToProps = state => {
@@ -19,6 +19,9 @@ const mapDispatchToProps = dispatch => {
     },
     handleUnmount: () => {
       dispatch(resetGame());
+    },
+    handleDidMount: () => {
+      dispatch(fetchBestScore());
     }
   };
 };

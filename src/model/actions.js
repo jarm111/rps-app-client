@@ -72,3 +72,11 @@ export const resetGame = () => {
     dispatch(setCurrentScore(0));
   };
 };
+
+export const fetchBestScore = () => {
+  return (dispatch, getState) => {
+    fetch('http://localhost:5000/users/testUser')
+      .then(res => res.json())
+      .then(res => dispatch(setBestScore(res.bestScore)));
+  };
+};
