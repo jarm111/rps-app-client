@@ -14,8 +14,8 @@ class ScoreLogic {
     }
   }
 
-  static calculateBestScore(currentScore, bestScore) {
-    return currentScore > bestScore ? currentScore : bestScore;
+  static isNewBestScore(currentScore, bestScore) {
+    return currentScore > bestScore ? true : false;
   }
 }
 

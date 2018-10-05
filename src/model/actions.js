@@ -53,15 +53,12 @@ export const processRound = playerSelection => {
         )
       )
     );
-    dispatch(
-      setBestScore(
-        ScoreLogic.calculateBestScore(
-          getState().score.current,
-          getState().score.best
-        )
-      )
-    );
-    sendBestScore(getState().score.best);
+    if (
+      ScoreLogic.isNewBestScore(getState().score.current, getState().score.best)
+    ) {
+      dispatch(setBestScore(getState().score.current));
+      sendBestScore(getState().score.best);
+    }
   };
 };
 
