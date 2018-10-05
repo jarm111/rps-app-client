@@ -61,6 +61,7 @@ export const processRound = playerSelection => {
         )
       )
     );
+    sendBestScore(getState().score.best);
   };
 };
 
@@ -77,6 +78,23 @@ export const fetchBestScore = () => {
   return (dispatch, getState) => {
     fetch('http://localhost:5000/users/testUser')
       .then(res => res.json())
-      .then(res => dispatch(setBestScore(res.bestScore)));
+      .then(
+        res => dispatch(setBestScore(res.bestScore)),
+        error => console.log(error)
+      );
   };
+};
+
+const sendBestScore = score => {
+  const init = {
+    method: 'PUT',
+    body: 'bestScore=' + score,
+    headers: new Headers({
+      'content-type': 'application/x-www-form-urlencoded'
+    })
+  };
+
+  fetch('http://localhost:5000/users/testUser', init).then(null, error =>
+    console.log(error)
+  );
 };
