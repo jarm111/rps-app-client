@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { fetchBestScore } from '../model/actions';
 import MenuView from '../components/MenuView';
 
 const mapStateToProps = state => {
@@ -7,6 +8,17 @@ const mapStateToProps = state => {
   };
 };
 
-const ConnectedMenuView = connect(mapStateToProps)(MenuView);
+const mapDispatchToProps = dispatch => {
+  return {
+    handleDidMount: () => {
+      dispatch(fetchBestScore());
+    }
+  };
+};
+
+const ConnectedMenuView = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MenuView);
 
 export default ConnectedMenuView;
