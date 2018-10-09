@@ -96,7 +96,21 @@ export const fetchBestScore = () => {
 
 export const responseGoogle = response => {
   return (dispatch, getState) => {
+    const init = {
+      method: 'POST',
+      body: 'accessToken=' + response.hg.id_token,
+      headers: new Headers({
+        'content-type': 'application/x-www-form-urlencoded'
+      })
+    };
     console.log(response);
+    fetch('http://localhost:5000/auth/google', init).then(res => {
+      const token = res.headers.get('x-auth-token');
+      if (token) {
+        dispatch(setIsAuthenticated(true));
+        dispatch(setAccessToken(token));
+      }
+    });
   };
 };
 
