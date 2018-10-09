@@ -5,7 +5,9 @@ import {
   SET_CURRENT_SCORE,
   SET_PLAYER_SELECTION,
   SET_OPPONENT_SELECTION,
-  SET_ROUND_RESULT
+  SET_ROUND_RESULT,
+  SET_IS_AUTHENTICATED,
+  SET_TOKEN
 } from './actions';
 
 const initialScore = {
@@ -17,6 +19,11 @@ const initialRound = {
   playerSelection: null,
   opponentSelection: null,
   result: GameStatus.Init
+};
+
+const initialUser = {
+  isAuthenticated: false,
+  accessToken: ''
 };
 
 const score = (state = initialScore, action) => {
@@ -43,6 +50,17 @@ const round = (state = initialRound, action) => {
   }
 };
 
-const rootReducer = combineReducers({ score, round });
+const user = (state = initialUser, action) => {
+  switch (action.type) {
+    case SET_IS_AUTHENTICATED:
+      return { ...state, isAuthenticated: action.state };
+    case SET_TOKEN:
+      return { ...state, accessToken: action.token };
+    default:
+      return state;
+  }
+};
+
+const rootReducer = combineReducers({ score, round, user });
 
 export default rootReducer;

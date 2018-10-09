@@ -7,6 +7,8 @@ export const SET_CURRENT_SCORE = 'SET_CURRENT_SCORE';
 export const SET_PLAYER_SELECTION = 'SET_PLAYER_SELECTION';
 export const SET_OPPONENT_SELECTION = 'SET_OPPONENT_SELECTION';
 export const SET_ROUND_RESULT = 'SET_ROUND_RESULT';
+export const SET_IS_AUTHENTICATED = 'SET_IS_AUTHENTICATED';
+export const SET_TOKEN = 'SET_TOKEN';
 
 export const setBestScore = score => ({
   type: SET_BEST_SCORE,
@@ -31,6 +33,16 @@ export const setOpponentSelection = selection => ({
 export const setRoundResult = result => ({
   type: SET_ROUND_RESULT,
   result
+});
+
+export const setIsAuthenticated = state => ({
+  type: SET_IS_AUTHENTICATED,
+  state
+});
+
+export const setAccessToken = token => ({
+  type: SET_TOKEN,
+  token
 });
 
 export const processRound = playerSelection => {
