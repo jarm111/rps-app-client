@@ -94,6 +94,18 @@ export const fetchBestScore = () => {
   };
 };
 
+export const responseGoogle = response => {
+  return (dispatch, getState) => {
+    console.log(response);
+  };
+};
+
+export const logout = () => {
+  return (dispatch, getState) => {
+    console.log('Logged out user');
+  };
+};
+
 const sendBestScore = score => {
   const init = {
     method: 'PUT',
