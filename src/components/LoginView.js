@@ -1,56 +1,35 @@
 import React from 'react';
-import {
-  Col,
-  Container,
-  Row,
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input
-} from 'reactstrap';
+import { Col, Container, Row } from 'reactstrap';
+import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
-const LoginView = props => (
-  <Container>
-    <Row>
-      <Col>
-        <h2>Login</h2>
-      </Col>
-    </Row>
-    <Form>
-      <FormGroup row>
-        <Label for="username" hidden>
-          User
-        </Label>
+const LoginView = props => {
+  const responseGoogle = response => {
+    console.log(response);
+  };
+
+  const logout = () => {
+    console.log('Logged out user');
+  };
+
+  return (
+    <Container>
+      <Row>
         <Col>
-          <Input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="username"
+          <GoogleLogin
+            clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+            buttonText="Google Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
           />
         </Col>
-      </FormGroup>
-      <FormGroup row>
-        <Label for="password" hidden>
-          Password
-        </Label>
+      </Row>
+      <Row>
         <Col>
-          <Input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="password"
-          />
+          <GoogleLogout buttonText="Google Logout" onLogoutSuccess={logout} />
         </Col>
-      </FormGroup>
-      <FormGroup row>
-        <Col>
-          <Button>Login</Button>
-        </Col>
-      </FormGroup>
-    </Form>
-  </Container>
-);
+      </Row>
+    </Container>
+  );
+};
 
 export default LoginView;
