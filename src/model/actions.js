@@ -69,7 +69,7 @@ export const processRound = playerSelection => {
       ScoreLogic.isNewBestScore(getState().score.current, getState().score.best)
     ) {
       dispatch(setBestScore(getState().score.current));
-      sendBestScore(getState().score.best);
+      // sendBestScore(getState().score.best);
     }
   };
 };
@@ -85,32 +85,32 @@ export const resetGame = () => {
 
 export const fetchBestScore = () => {
   return (dispatch, getState) => {
-    fetch('http://localhost:5000/users/testUser')
-      .then(res => res.json())
-      .then(
-        res => dispatch(setBestScore(res.bestScore)),
-        error => console.log(error)
-      );
+    // fetch('http://localhost:5000/users/testUser')
+    //   .then(res => res.json())
+    //   .then(
+    //     res => dispatch(setBestScore(res.bestScore)),
+    //     error => console.log(error)
+    //   );
   };
 };
 
 export const responseGoogle = response => {
   return (dispatch, getState) => {
-    const init = {
-      method: 'POST',
-      body: 'accessToken=' + response.hg.id_token,
-      headers: new Headers({
-        'content-type': 'application/x-www-form-urlencoded'
-      })
-    };
+    // const init = {
+    //   method: 'POST',
+    //   body: 'accessToken=' + response.hg.id_token,
+    //   headers: new Headers({
+    //     'content-type': 'application/x-www-form-urlencoded'
+    //   })
+    // };
     console.log(response);
-    fetch('http://localhost:5000/auth/google', init).then(res => {
-      const token = res.headers.get('x-auth-token');
-      if (token) {
-        dispatch(setIsAuthenticated(true));
-        dispatch(setAccessToken(token));
-      }
-    });
+    // fetch('http://localhost:5000/auth/google', init).then(res => {
+    //   const token = res.headers.get('x-auth-token');
+    //   if (token) {
+    //     dispatch(setIsAuthenticated(true));
+    //     dispatch(setAccessToken(token));
+    //   }
+    // });
   };
 };
 
@@ -120,16 +120,16 @@ export const logout = () => {
   };
 };
 
-const sendBestScore = score => {
-  const init = {
-    method: 'PUT',
-    body: 'bestScore=' + score,
-    headers: new Headers({
-      'content-type': 'application/x-www-form-urlencoded'
-    })
-  };
+// const sendBestScore = score => {
+//   const init = {
+//     method: 'PUT',
+//     body: 'bestScore=' + score,
+//     headers: new Headers({
+//       'content-type': 'application/x-www-form-urlencoded'
+//     })
+//   };
 
-  fetch('http://localhost:5000/users/testUser', init).then(null, error =>
-    console.log(error)
-  );
-};
+//   fetch('http://localhost:5000/users/testUser', init).then(null, error =>
+//     console.log(error)
+//   );
+// };
