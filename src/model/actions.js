@@ -83,17 +83,6 @@ export const resetGame = () => {
   };
 };
 
-export const fetchBestScore = () => {
-  return (dispatch, getState) => {
-    // fetch('http://localhost:5000/users/testUser')
-    //   .then(res => res.json())
-    //   .then(
-    //     res => dispatch(setBestScore(res.bestScore)),
-    //     error => console.log(error)
-    //   );
-  };
-};
-
 export const responseGoogle = response => {
   return (dispatch, getState) => {
     const init = {
