@@ -9,7 +9,7 @@ const LoginView = props => {
     button = (
       <GoogleLogin
         clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-        buttonText="Google Login"
+        buttonText="Google Sign-in"
         onSuccess={response =>
           props.handleGoogleLoginSuccess(response, props.history)
         }
@@ -19,7 +19,7 @@ const LoginView = props => {
   } else {
     button = (
       <GoogleLogout
-        buttonText="Google Logout"
+        buttonText="Log Out"
         onLogoutSuccess={() => props.handleGoogleLogoutSuccess(props.history)}
       />
     );
