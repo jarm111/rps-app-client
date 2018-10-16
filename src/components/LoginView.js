@@ -5,13 +5,14 @@ import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 const LoginView = props => {
   let button;
-
   if (!props.isLoggedIn) {
     button = (
       <GoogleLogin
         clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
         buttonText="Google Login"
-        onSuccess={props.handleGoogleLoginSuccess}
+        onSuccess={response =>
+          props.handleGoogleLoginSuccess(response, props.history)
+        }
         onFailure={props.handleGoogleLoginFailure}
       />
     );
@@ -37,7 +38,8 @@ LoginView.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
   handleGoogleLoginSuccess: PropTypes.func.isRequired,
   handleGoogleLoginFailure: PropTypes.func.isRequired,
-  handleGoogleLogoutSuccess: PropTypes.func.isRequired
+  handleGoogleLogoutSuccess: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
 };
 
 export default LoginView;

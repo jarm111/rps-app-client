@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { responseGoogle, logout } from '../model/actions';
+import {
+  responseGoogleSuccess,
+  responseGoogleFailure,
+  logout
+} from '../model/actions';
 import LoginView from '../components/LoginView';
 
 const mapStateToProps = state => {
@@ -10,11 +14,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleGoogleLoginSuccess: response => {
-      dispatch(responseGoogle(response));
+    handleGoogleLoginSuccess: (response, history) => {
+      dispatch(responseGoogleSuccess(response, history));
     },
     handleGoogleLoginFailure: response => {
-      dispatch(responseGoogle(response));
+      dispatch(responseGoogleFailure(response));
     },
     handleGoogleLogoutSuccess: response => {
       dispatch(logout());

@@ -89,7 +89,7 @@ export const resetGame = () => {
   };
 };
 
-export const responseGoogle = response => {
+export const responseGoogleSuccess = (response, history) => {
   return (dispatch, getState) => {
     const init = {
       method: 'GET',
@@ -97,9 +97,7 @@ export const responseGoogle = response => {
         access_token: response.accessToken
       })
     };
-
     let userName = response.profileObj.givenName;
-    console.log(userName);
 
     fetch('http://localhost:5000/user/auth/google', init)
       .then(res => res.json())
@@ -111,7 +109,14 @@ export const responseGoogle = response => {
           dispatch(setBestScore(res.bestScore));
           userName && dispatch(setUserName(userName));
         }
-      });
+      })
+      .then(history.push('/'));
+  };
+};
+
+export const responseGoogleFailure = response => {
+  return (dispatch, getState) => {
+    console.log(response.error);
   };
 };
 
