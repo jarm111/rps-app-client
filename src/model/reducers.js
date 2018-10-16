@@ -7,7 +7,8 @@ import {
   SET_OPPONENT_SELECTION,
   SET_ROUND_RESULT,
   SET_IS_AUTHENTICATED,
-  SET_TOKEN
+  SET_TOKEN,
+  SET_USERNAME
 } from './actions';
 
 const initialScore = {
@@ -23,7 +24,8 @@ const initialRound = {
 
 const initialUser = {
   isAuthenticated: false,
-  accessToken: ''
+  accessToken: '',
+  userName: ''
 };
 
 const score = (state = initialScore, action) => {
@@ -56,6 +58,8 @@ const user = (state = initialUser, action) => {
       return { ...state, isAuthenticated: action.state };
     case SET_TOKEN:
       return { ...state, accessToken: action.token };
+    case SET_USERNAME:
+      return { ...state, userName: action.name };
     default:
       return state;
   }

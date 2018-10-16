@@ -3,7 +3,8 @@ import NavigationBar from '../components/NavigationBar';
 
 const mapStateToProps = state => {
   return {
-    isLoggedIn: state.user.isAuthenticated
+    isLoggedIn: state.user.isAuthenticated,
+    userName: state.user.userName
   };
 };
 

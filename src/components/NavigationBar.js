@@ -28,6 +28,13 @@ class NavigationBar extends React.Component {
   }
 
   render() {
+    const displayGreetings = this.props.isLoggedIn && this.props.userName;
+    const greetings = (
+      <NavItem className="mr-5">
+        <span className="navbar-text">{this.props.userName}</span>
+      </NavItem>
+    );
+
     return (
       <Navbar color="dark" dark expand="sm" className="mb-5">
         <Container>
@@ -37,6 +44,7 @@ class NavigationBar extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
+              {displayGreetings && greetings}
               <NavItem>
                 <NavLink
                   exact
@@ -74,7 +82,8 @@ class NavigationBar extends React.Component {
 }
 
 NavigationBar.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired
+  isLoggedIn: PropTypes.bool.isRequired,
+  userName: PropTypes.string.isRequired
 };
 
 export default NavigationBar;

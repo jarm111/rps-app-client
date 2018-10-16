@@ -9,6 +9,7 @@ export const SET_OPPONENT_SELECTION = 'SET_OPPONENT_SELECTION';
 export const SET_ROUND_RESULT = 'SET_ROUND_RESULT';
 export const SET_IS_AUTHENTICATED = 'SET_IS_AUTHENTICATED';
 export const SET_TOKEN = 'SET_TOKEN';
+export const SET_USERNAME = 'SET_USERNAME';
 
 export const setBestScore = score => ({
   type: SET_BEST_SCORE,
@@ -43,6 +44,11 @@ export const setIsAuthenticated = state => ({
 export const setAccessToken = token => ({
   type: SET_TOKEN,
   token
+});
+
+export const setUserName = name => ({
+  type: SET_USERNAME,
+  name
 });
 
 export const processRound = playerSelection => {
@@ -92,6 +98,9 @@ export const responseGoogle = response => {
       })
     };
 
+    let userName = response.profileObj.givenName;
+    console.log(userName);
+
     fetch('http://localhost:5000/user/auth/google', init)
       .then(res => res.json())
       .then(res => {
@@ -100,6 +109,7 @@ export const responseGoogle = response => {
           dispatch(setIsAuthenticated(true));
           dispatch(setAccessToken(token));
           dispatch(setBestScore(res.bestScore));
+          userName && dispatch(setUserName(userName));
         }
       });
   };
