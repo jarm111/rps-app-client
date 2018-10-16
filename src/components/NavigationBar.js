@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Container,
   Collapse,
@@ -61,7 +62,7 @@ class NavigationBar extends React.Component {
                   activeClassName="active"
                   to={paths.login}
                 >
-                  LOGIN
+                  {this.props.isLoggedIn ? 'LOGOUT' : 'LOGIN'}
                 </NavLink>
               </NavItem>
             </Nav>
@@ -71,5 +72,9 @@ class NavigationBar extends React.Component {
     );
   }
 }
+
+NavigationBar.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired
+};
 
 export default NavigationBar;
