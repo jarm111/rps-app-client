@@ -1,6 +1,7 @@
 import GameLogic from './GameLogic';
 import ScoreLogic from './ScoreLogic';
 import { GameStatus } from './enums';
+import paths from './paths';
 
 export const SET_BEST_SCORE = 'SET_BEST_SCORE';
 export const SET_CURRENT_SCORE = 'SET_CURRENT_SCORE';
@@ -110,7 +111,7 @@ export const responseGoogleSuccess = (response, history) => {
           userName && dispatch(setUserName(userName));
         }
       })
-      .then(history.push('/'));
+      .then(history.push(paths.home));
   };
 };
 
@@ -120,12 +121,12 @@ export const responseGoogleFailure = response => {
   };
 };
 
-export const logout = () => {
+export const logout = history => {
   return (dispatch, getState) => {
     dispatch(setIsAuthenticated(false));
     dispatch(setAccessToken(''));
     dispatch(setBestScore(0));
-    console.log('Logged out user');
+    history.push(paths.home);
   };
 };
 
