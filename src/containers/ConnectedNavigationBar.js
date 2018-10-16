@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import NavigationBar from '../components/NavigationBar';
 
 const mapStateToProps = state => {
@@ -8,6 +9,8 @@ const mapStateToProps = state => {
   };
 };
 
-const ConnectedNavigationBar = connect(mapStateToProps)(NavigationBar);
+const ConnectedNavigationBar = withRouter(
+  connect(mapStateToProps)(NavigationBar)
+);
 
 export default ConnectedNavigationBar;
