@@ -69,7 +69,7 @@ export const processRound = playerSelection => {
       ScoreLogic.isNewBestScore(getState().score.current, getState().score.best)
     ) {
       dispatch(setBestScore(getState().score.current));
-      // sendBestScore(getState().score.best);
+      sendBestScore(getState().score.best, getState().user.accessToken);
     }
   };
 };
@@ -96,21 +96,23 @@ export const fetchBestScore = () => {
 
 export const responseGoogle = response => {
   return (dispatch, getState) => {
-    // const init = {
-    //   method: 'POST',
-    //   body: 'accessToken=' + response.hg.id_token,
-    //   headers: new Headers({
-    //     'content-type': 'application/x-www-form-urlencoded'
-    //   })
-    // };
-    console.log(response);
-    // fetch('http://localhost:5000/auth/google', init).then(res => {
-    //   const token = res.headers.get('x-auth-token');
-    //   if (token) {
-    //     dispatch(setIsAuthenticated(true));
-    //     dispatch(setAccessToken(token));
-    //   }
-    // });
+    const init = {
+      method: 'GET',
+      headers: new Headers({
+        access_token: response.accessToken
+      })
+    };
+
+    fetch('http://localhost:5000/user/auth/google', init)
+      .then(res => res.json())
+      .then(res => {
+        const token = res.token;
+        if (token) {
+          dispatch(setIsAuthenticated(true));
+          dispatch(setAccessToken(token));
+          dispatch(setBestScore(res.bestScore));
+        }
+      });
   };
 };
 
@@ -120,16 +122,17 @@ export const logout = () => {
   };
 };
 
-// const sendBestScore = score => {
-//   const init = {
-//     method: 'PUT',
-//     body: 'bestScore=' + score,
-//     headers: new Headers({
-//       'content-type': 'application/x-www-form-urlencoded'
-//     })
-//   };
+const sendBestScore = (score, token) => {
+  const init = {
+    method: 'PUT',
+    body: JSON.stringify({ bestScore: score }),
+    headers: new Headers({
+      Authorization: 'Bearer ' + token,
+      'content-type': 'application/json'
+    })
+  };
 
-//   fetch('http://localhost:5000/users/testUser', init).then(null, error =>
-//     console.log(error)
-//   );
-// };
+  fetch('http://localhost:5000/user/score/', init).then(null, error =>
+    console.log(error)
+  );
+};
