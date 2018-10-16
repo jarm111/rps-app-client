@@ -107,6 +107,9 @@ export const responseGoogle = response => {
 
 export const logout = () => {
   return (dispatch, getState) => {
+    dispatch(setIsAuthenticated(false));
+    dispatch(setAccessToken(''));
+    dispatch(setBestScore(0));
     console.log('Logged out user');
   };
 };
