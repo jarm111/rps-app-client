@@ -4,31 +4,27 @@ import { Col, Container, Row } from 'reactstrap';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
 const LoginView = props => {
-  let button;
-  if (!props.isLoggedIn) {
-    button = (
-      <GoogleLogin
-        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-        buttonText="Google Sign-in"
-        onSuccess={response =>
-          props.handleGoogleLoginSuccess(response, props.history)
-        }
-        onFailure={props.handleGoogleLoginFailure}
-      />
-    );
-  } else {
-    button = (
-      <GoogleLogout
-        buttonText="Log Out"
-        onLogoutSuccess={() => props.handleGoogleLogoutSuccess(props.history)}
-      />
-    );
-  }
+  const loginButton = (
+    <GoogleLogin
+      clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+      buttonText="Google Sign-in"
+      onSuccess={response =>
+        props.handleGoogleLoginSuccess(response, props.history)
+      }
+      onFailure={props.handleGoogleLoginFailure}
+    />
+  );
+  const logoutButton = (
+    <GoogleLogout
+      buttonText="Log Out"
+      onLogoutSuccess={() => props.handleGoogleLogoutSuccess(props.history)}
+    />
+  );
 
   return (
     <Container>
       <Row>
-        <Col>{button}</Col>
+        <Col>{props.isLoggedIn ? logoutButton : loginButton}</Col>
       </Row>
     </Container>
   );
