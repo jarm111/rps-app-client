@@ -3,7 +3,7 @@ import {
   responseGoogleSuccess,
   responseGoogleFailure,
   logout
-} from '../model/actions';
+} from '../model/thunks';
 import LoginView from '../components/LoginView';
 
 const mapStateToProps = state => {
