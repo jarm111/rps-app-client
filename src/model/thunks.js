@@ -2,6 +2,7 @@ import GameLogic from './GameLogic';
 import ScoreLogic from './ScoreLogic';
 import { GameStatus } from './enums';
 import paths from './paths';
+import { getTokenAndBestScore, sendBestScore } from '../utils/apiCalls';
 import {
   setBestScore,
   setCurrentScore,
@@ -37,7 +38,10 @@ export const processRound = playerSelection => {
       ScoreLogic.isNewBestScore(getState().score.current, getState().score.best)
     ) {
       dispatch(setBestScore(getState().score.current));
-      sendBestScore(getState().score.best, getState().user.accessToken);
+      sendBestScore(getState().score.best, getState().user.accessToken).then(
+        null,
+        error => console.error(error)
+      );
     }
   };
 };
@@ -53,32 +57,25 @@ export const resetGame = () => {
 
 export const responseGoogleSuccess = (response, history) => {
   return (dispatch, getState) => {
-    const init = {
-      method: 'GET',
-      headers: new Headers({
-        access_token: response.accessToken
-      })
-    };
     let userName = response.profileObj.givenName;
 
-    fetch('http://localhost:5000/user/auth/google', init)
-      .then(res => res.json())
+    getTokenAndBestScore(response.accessToken)
       .then(res => {
-        const token = res.token;
-        if (token) {
+        if (res.token) {
           dispatch(setIsAuthenticated(true));
-          dispatch(setAccessToken(token));
+          dispatch(setAccessToken(res.token));
           dispatch(setBestScore(res.bestScore));
           userName && dispatch(setUserName(userName));
         }
       })
-      .then(history.push(paths.home));
+      .then(() => history.push(paths.home))
+      .catch(error => console.error(error));
   };
 };
 
 export const responseGoogleFailure = response => {
   return (dispatch, getState) => {
-    console.log(response.error);
+    console.error(response.error);
   };
 };
 
@@ -89,19 +86,4 @@ export const logout = history => {
     dispatch(setBestScore(0));
     history.push(paths.home);
   };
-};
-
-const sendBestScore = (score, token) => {
-  const init = {
-    method: 'PUT',
-    body: JSON.stringify({ bestScore: score }),
-    headers: new Headers({
-      Authorization: 'Bearer ' + token,
-      'content-type': 'application/json'
-    })
-  };
-
-  fetch('http://localhost:5000/user/score/', init).then(null, error =>
-    console.log(error)
-  );
 };
