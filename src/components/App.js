@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import paths from '../model/paths';
+import routes from '../model/routes';
 import ConnectedNavigationBar from '../containers/ConnectedNavigationBar';
 import ConnectedGameView from '../containers/ConnectedGameView';
 import ConnectedMenuView from '../containers/ConnectedMenuView';
@@ -11,9 +11,9 @@ const App = props => (
   <div className="App">
     <ConnectedNavigationBar />
     <Switch>
-      <Route exact path={paths.home} component={ConnectedMenuView} />
-      <Route path={paths.play} component={ConnectedGameView} />
-      <Route path={paths.login} component={ConnectedLoginView} />
+      <Route exact path={routes.home} component={ConnectedMenuView} />
+      <Route path={routes.play} component={ConnectedGameView} />
+      <Route path={routes.login} component={ConnectedLoginView} />
     </Switch>
   </div>
 );

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Container, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import paths from '../model/paths';
+import routes from '../model/routes';
 import ScoreBox from './ScoreBox';
 
 const MenuView = props => (
@@ -19,14 +19,14 @@ const MenuView = props => (
     </Row>
     <Row className="mb-2">
       <Col>
-        <Link className="btn btn-secondary" to={paths.play}>
+        <Link className="btn btn-secondary" to={routes.play}>
           PLAY
         </Link>
       </Col>
     </Row>
     <Row className="mb-4">
       <Col>
-        <Link className="btn btn-secondary" to={paths.login}>
+        <Link className="btn btn-secondary" to={routes.login}>
           LOGIN
         </Link>
       </Col>

@@ -1,7 +1,7 @@
 import GameLogic from './GameLogic';
 import ScoreLogic from './ScoreLogic';
 import { GameStatus } from './enums';
-import paths from './paths';
+import routes from './routes';
 import { getTokenAndBestScore, sendBestScore } from '../utils/apiCalls';
 import {
   setBestScore,
@@ -68,7 +68,7 @@ export const responseGoogleSuccess = (response, history) => {
           userName && dispatch(setUserName(userName));
         }
       })
-      .then(() => history.push(paths.home))
+      .then(() => history.push(routes.home))
       .catch(error => console.error(error));
   };
 };
@@ -84,6 +84,6 @@ export const logout = history => {
     dispatch(setIsAuthenticated(false));
     dispatch(setAccessToken(''));
     dispatch(setBestScore(0));
-    history.push(paths.home);
+    history.push(routes.home);
   };
 };

@@ -9,7 +9,7 @@ import {
   NavItem
 } from 'reactstrap';
 import { Link, NavLink } from 'react-router-dom';
-import paths from '../model/paths';
+import routes from '../model/routes';
 
 export default class NavigationBar extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ export default class NavigationBar extends React.Component {
     return (
       <Navbar color="dark" dark expand="sm" className="mb-5">
         <Container>
-          <Link className="navbar-brand" to={paths.home}>
+          <Link className="navbar-brand" to={routes.home}>
             RPS
           </Link>
           <NavbarToggler onClick={this.toggle} />
@@ -50,7 +50,7 @@ export default class NavigationBar extends React.Component {
                   exact
                   className="nav-link"
                   activeClassName="active"
-                  to={paths.home}
+                  to={routes.home}
                 >
                   HOME
                 </NavLink>
@@ -59,7 +59,7 @@ export default class NavigationBar extends React.Component {
                 <NavLink
                   className="nav-link"
                   activeClassName="active"
-                  to={paths.play}
+                  to={routes.play}
                 >
                   PLAY
                 </NavLink>
@@ -68,7 +68,7 @@ export default class NavigationBar extends React.Component {
                 <NavLink
                   className="nav-link"
                   activeClassName="active"
-                  to={paths.login}
+                  to={routes.login}
                 >
                   {this.props.isLoggedIn ? 'LOGOUT' : 'LOGIN'}
                 </NavLink>

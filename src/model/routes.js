@@ -1,7 +1,7 @@
-const paths = {
+const routes = {
   home: '/',
   play: '/play',
   login: '/login'
 };
 
-export default paths;
+export default routes;
