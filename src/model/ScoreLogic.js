@@ -15,6 +15,6 @@ export default class ScoreLogic {
   }
 
   static isNewBestScore(currentScore, bestScore) {
-    return currentScore > bestScore ? true : false;
+    return currentScore > bestScore;
   }
 }
