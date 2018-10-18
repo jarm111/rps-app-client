@@ -1,3 +1,9 @@
+import {
+  API_DOMAIN,
+  API_AUTH_GOOGLE_ROUTE,
+  API_USER_SCORE_ROUTE
+} from './config';
+
 export const getTokenAndBestScore = token => {
   const init = {
     method: 'GET',
@@ -6,7 +12,7 @@ export const getTokenAndBestScore = token => {
     })
   };
 
-  return fetch('http://localhost:5000/user/auth/google', init).then(res =>
+  return fetch(API_DOMAIN + API_AUTH_GOOGLE_ROUTE, init).then(res =>
     res.json()
   );
 };
@@ -21,5 +27,5 @@ export const sendBestScore = (score, token) => {
     })
   };
 
-  return fetch('http://localhost:5000/user/score/', init);
+  return fetch(API_DOMAIN + API_USER_SCORE_ROUTE, init);
 };

@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Container, Row } from 'reactstrap';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import { GOOGLE_CLIENT_ID } from '../utils/config';
 
 const LoginView = props => {
   const loginButton = (
     <GoogleLogin
-      clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+      clientId={GOOGLE_CLIENT_ID}
       buttonText="Google Sign-in"
       onSuccess={response =>
         props.handleGoogleLoginSuccess(response, props.history)
