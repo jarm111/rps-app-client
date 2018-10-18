@@ -18,7 +18,7 @@ const LoginView = props => {
   const logoutButton = (
     <GoogleLogout
       buttonText="Log Out"
-      onLogoutSuccess={() => props.handleGoogleLogoutSuccess(props.history)}
+      onLogoutSuccess={() => props.handleLogout(props.history)}
     />
   );
 
@@ -35,7 +35,7 @@ LoginView.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
   handleGoogleLoginSuccess: PropTypes.func.isRequired,
   handleGoogleLoginFailure: PropTypes.func.isRequired,
-  handleGoogleLogoutSuccess: PropTypes.func.isRequired,
+  handleLogout: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired
 };
 

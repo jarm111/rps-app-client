@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => {
     handleGoogleLoginFailure: response => {
       dispatch(responseGoogleFailure(response));
     },
-    handleGoogleLogoutSuccess: history => {
+    handleLogout: history => {
       dispatch(logout(history));
     }
   };
