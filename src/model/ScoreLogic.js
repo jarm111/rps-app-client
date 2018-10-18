@@ -1,6 +1,6 @@
 import { GameStatus } from '../model/enums';
 
-class ScoreLogic {
+export default class ScoreLogic {
   static calculateCurrentScore(currentScore, gameResult) {
     switch (gameResult) {
       case GameStatus.Win:
@@ -18,5 +18,3 @@ class ScoreLogic {
     return currentScore > bestScore ? true : false;
   }
 }
-
-export default ScoreLogic;

@@ -6,7 +6,7 @@ import GameStatusText from './GameStatusText';
 import PlayerRpsButtons from './PlayerRpsButtons';
 import ScoreBox from './ScoreBox';
 
-class GameView extends React.Component {
+export default class GameView extends React.Component {
   componentWillUnmount() {
     this.props.handleUnmount();
   }
@@ -54,5 +54,3 @@ GameView.propTypes = {
   handlePlayerRpsButtonClick: PropTypes.func.isRequired,
   handleUnmount: PropTypes.func.isRequired
 };
-
-export default GameView;

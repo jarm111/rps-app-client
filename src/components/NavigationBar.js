@@ -11,7 +11,7 @@ import {
 import { Link, NavLink } from 'react-router-dom';
 import paths from '../model/paths';
 
-class NavigationBar extends React.Component {
+export default class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -85,5 +85,3 @@ NavigationBar.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
   userName: PropTypes.string.isRequired
 };
-
-export default NavigationBar;

@@ -1,6 +1,6 @@
 import { GameStatus, Rps } from '../model/enums';
 
-class GameLogic {
+export default class GameLogic {
   static calculateRoundResult(playerSelection, opponentSelection) {
     if (playerSelection === opponentSelection) {
       return GameStatus.Tie;
@@ -27,5 +27,3 @@ class GameLogic {
     return Rps.get(getRandomInt(0, 3));
   }
 }
-
-export default GameLogic;
