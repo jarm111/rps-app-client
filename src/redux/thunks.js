@@ -1,7 +1,7 @@
-import GameLogic from './GameLogic';
-import ScoreLogic from './ScoreLogic';
-import { GameStatus } from './enums';
-import routes from './routes';
+import GameLogic from '../utils/GameLogic';
+import ScoreLogic from '../utils/ScoreLogic';
+import { GameStatus } from '../utils/enums';
+import routes from '../utils/routes';
 import { getTokenAndBestScore, sendBestScore } from '../utils/apiCalls';
 import {
   setBestScore,

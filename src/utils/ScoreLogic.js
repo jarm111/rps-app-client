@@ -1,4 +1,4 @@
-import { GameStatus } from '../model/enums';
+import { GameStatus } from './enums';
 
 export default class ScoreLogic {
   static calculateCurrentScore(currentScore, gameResult) {

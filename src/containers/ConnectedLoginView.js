@@ -3,7 +3,7 @@ import {
   responseGoogleSuccess,
   responseGoogleFailure,
   logout
-} from '../model/thunks';
+} from '../redux/thunks';
 import LoginView from '../components/LoginView';
 
 const mapStateToProps = state => {

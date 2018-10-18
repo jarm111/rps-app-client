@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import { Rps } from '../model/enums';
+import { Rps } from '../utils/enums';
 import rock from '../images/rock.svg';
 import paper from '../images/paper.svg';
 import scissors from '../images/scissors.svg';

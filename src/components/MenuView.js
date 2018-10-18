@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Container, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import routes from '../model/routes';
+import routes from '../utils/routes';
 import ScoreBox from './ScoreBox';
 
 const MenuView = props => (

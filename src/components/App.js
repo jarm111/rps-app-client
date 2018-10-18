@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import routes from '../model/routes';
+import routes from '../utils/routes';
 import ConnectedNavigationBar from '../containers/ConnectedNavigationBar';
 import ConnectedGameView from '../containers/ConnectedGameView';
 import ConnectedMenuView from '../containers/ConnectedMenuView';

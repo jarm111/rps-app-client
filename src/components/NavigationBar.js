@@ -9,7 +9,7 @@ import {
   NavItem
 } from 'reactstrap';
 import { Link, NavLink } from 'react-router-dom';
-import routes from '../model/routes';
+import routes from '../utils/routes';
 
 export default class NavigationBar extends React.Component {
   constructor(props) {

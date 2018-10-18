@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { GameStatus } from './enums';
+import { GameStatus } from '../utils/enums';
 import {
   SET_BEST_SCORE,
   SET_CURRENT_SCORE,

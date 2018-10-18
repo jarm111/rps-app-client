@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { processRound, resetGame } from '../model/thunks';
+import { processRound, resetGame } from '../redux/thunks';
 import GameView from '../components/GameView';
 
 const mapStateToProps = state => {

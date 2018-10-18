@@ -1,4 +1,4 @@
-import { GameStatus, Rps } from '../model/enums';
+import { GameStatus, Rps } from './enums';
 
 export default class GameLogic {
   static calculateRoundResult(playerSelection, opponentSelection) {
