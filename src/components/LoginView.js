@@ -19,6 +19,7 @@ const LoginView = props => {
   );
   const logoutButton = (
     <GoogleLogout
+      className="btn btn-secondary"
       buttonText="Log Out"
       onLogoutSuccess={() => props.handleLogout(props.history)}
     />
