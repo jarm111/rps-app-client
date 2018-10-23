@@ -52,7 +52,7 @@ export default class NavigationBar extends React.Component {
                   activeClassName="active"
                   to={routes.home}
                 >
-                  HOME
+                  Home
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -61,7 +61,7 @@ export default class NavigationBar extends React.Component {
                   activeClassName="active"
                   to={routes.play}
                 >
-                  PLAY
+                  Play
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -70,7 +70,7 @@ export default class NavigationBar extends React.Component {
                   activeClassName="active"
                   to={routes.login}
                 >
-                  {this.props.isLoggedIn ? 'LOGOUT' : 'LOGIN'}
+                  {this.props.isLoggedIn ? 'Log Out' : 'Log In  '}
                 </NavLink>
               </NavItem>
             </Nav>
