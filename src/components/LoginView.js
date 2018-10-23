@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Col, Container, Row } from 'reactstrap';
+import { Card, CardBody, CardTitle, Col, Container, Row } from 'reactstrap';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import { GOOGLE_CLIENT_ID } from '../utils/config';
 import './LoginView.css';
@@ -28,7 +28,16 @@ const LoginView = props => {
   return (
     <Container>
       <Row>
-        <Col>{props.isLoggedIn ? logoutButton : loginButton}</Col>
+        <Col xs="12" sm={{ size: 6, offset: 3 }}>
+          <Card>
+            <CardBody>
+              <CardTitle className="mb-4">
+                {!props.isLoggedIn ? 'Log In' : 'Log Out'}
+              </CardTitle>
+              {props.isLoggedIn ? logoutButton : loginButton}
+            </CardBody>
+          </Card>
+        </Col>
       </Row>
     </Container>
   );
