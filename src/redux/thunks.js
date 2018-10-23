@@ -57,18 +57,18 @@ export const resetGame = () => {
 
 export const responseGoogleSuccess = (response, history) => {
   return (dispatch, getState) => {
-    let userName = response.profileObj.givenName;
+    const userName = response.profileObj.givenName;
 
     getTokenAndBestScore(response.accessToken)
       .then(res => {
         if (res.token) {
+          history.push(routes.home);
           dispatch(setIsAuthenticated(true));
           dispatch(setAccessToken(res.token));
           dispatch(setBestScore(res.bestScore));
           userName && dispatch(setUserName(userName));
         }
       })
-      .then(() => history.push(routes.home))
       .catch(error => console.error(error));
   };
 };
@@ -81,9 +81,9 @@ export const responseGoogleFailure = response => {
 
 export const logout = history => {
   return (dispatch, getState) => {
+    history.push(routes.home);
     dispatch(setIsAuthenticated(false));
     dispatch(setAccessToken(''));
     dispatch(setBestScore(0));
-    history.push(routes.home);
   };
 };
