@@ -9,7 +9,7 @@ import './OpponentRpsIcons.css';
 
 const OpponentRpsIcons = props => {
   const selectedColor = 'bg-info';
-  const defaultColor = 'bg-secondary';
+  const defaultColor = 'bg-light';
   const images = [rock, paper, scissors];
 
   const icons = Rps.enums.map((item, index) => (

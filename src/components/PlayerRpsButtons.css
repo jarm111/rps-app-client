@@ -3,6 +3,7 @@
 }
 
 .PlayerRpsButtons-button {
+  border-radius: 10px;
   width: 7rem;
   height: 4rem;
 }

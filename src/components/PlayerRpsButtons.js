@@ -9,7 +9,7 @@ import './PlayerRpsButtons.css';
 
 const PlayerRpsButtons = props => {
   const selectedColor = 'info';
-  const defaultColor = 'secondary';
+  const defaultColor = 'light';
   const images = [rock, paper, scissors];
 
   const buttons = Rps.enums.map((item, index) => (

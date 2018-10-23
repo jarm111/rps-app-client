@@ -19,15 +19,15 @@ const MenuView = props => (
     </Row>
     <Row className="mb-2">
       <Col>
-        <Link className="btn btn-secondary" to={routes.play}>
-          PLAY
+        <Link className="btn btn-info" to={routes.play}>
+          Play
         </Link>
       </Col>
     </Row>
     <Row className="mb-4">
       <Col>
-        <Link className="btn btn-secondary" to={routes.login}>
-          LOGIN
+        <Link className="btn btn-info" to={routes.login}>
+          Login
         </Link>
       </Col>
     </Row>
