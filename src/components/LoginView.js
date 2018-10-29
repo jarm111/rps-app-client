@@ -26,7 +26,7 @@ const LoginView = props => {
   );
 
   return (
-    <Container>
+    <Container className="mb-4">
       <Row>
         <Col xs="12" sm={{ size: 6, offset: 3 }}>
           <Card>

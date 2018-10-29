@@ -13,7 +13,7 @@ export default class GameView extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container className="mb-4">
         <Row className="mb-4">
           <ScoreBox text="Best Streak" score={this.props.bestScore} />
           <ScoreBox text="Current Streak" score={this.props.currentScore} />

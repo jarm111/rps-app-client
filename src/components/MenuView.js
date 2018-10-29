@@ -6,7 +6,7 @@ import routes from '../utils/routes';
 import ScoreBox from './ScoreBox';
 
 const MenuView = props => (
-  <Container>
+  <Container className="mb-4">
     <Row>
       <Col>
         <h1>Rock-Paper-Scissors</h1>
