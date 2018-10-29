@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import ErrorAlert from '../components/ErrorAlert';
 
 const mapStateToProps = state => {
@@ -8,6 +9,6 @@ const mapStateToProps = state => {
   };
 };
 
-const ConnectedErrorAlert = connect(mapStateToProps)(ErrorAlert);
+const ConnectedErrorAlert = withRouter(connect(mapStateToProps)(ErrorAlert));
 
 export default ConnectedErrorAlert;

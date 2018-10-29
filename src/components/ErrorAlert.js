@@ -17,6 +17,10 @@ export default class ErrorAlert extends React.Component {
     if (!prevState.visible && prevProps.errorId !== this.props.errorId) {
       this.setState({ visible: true });
     }
+
+    if (prevState.visible && this.props.location !== prevProps.location) {
+      this.setState({ visible: false });
+    }
   }
 
   onDismiss() {
@@ -34,5 +38,6 @@ export default class ErrorAlert extends React.Component {
 
 ErrorAlert.propTypes = {
   errorMessage: PropTypes.string,
-  errorId: PropTypes.number
+  errorId: PropTypes.number,
+  location: PropTypes.object.isRequired
 };
