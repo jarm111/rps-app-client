@@ -8,7 +8,8 @@ import {
   SET_ROUND_RESULT,
   SET_IS_AUTHENTICATED,
   SET_TOKEN,
-  SET_USERNAME
+  SET_USERNAME,
+  SET_ERROR_MESSAGE
 } from './actions';
 
 const initialScore = {
@@ -26,6 +27,10 @@ const initialUser = {
   isAuthenticated: false,
   accessToken: '',
   userName: ''
+};
+
+const intialError = {
+  message: ''
 };
 
 const score = (state = initialScore, action) => {
@@ -65,6 +70,15 @@ const user = (state = initialUser, action) => {
   }
 };
 
-const rootReducer = combineReducers({ score, round, user });
+const error = (state = intialError, action) => {
+  switch (action.type) {
+    case SET_ERROR_MESSAGE:
+      return { ...state, message: action.message, id: action.id };
+    default:
+      return state;
+  }
+};
+
+const rootReducer = combineReducers({ score, round, user, error });
 
 export default rootReducer;

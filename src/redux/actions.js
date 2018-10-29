@@ -6,6 +6,9 @@ export const SET_ROUND_RESULT = 'SET_ROUND_RESULT';
 export const SET_IS_AUTHENTICATED = 'SET_IS_AUTHENTICATED';
 export const SET_TOKEN = 'SET_TOKEN';
 export const SET_USERNAME = 'SET_USERNAME';
+export const SET_ERROR_MESSAGE = 'SET_ERROR_MESSAGE';
+
+let previousErrorId = 0;
 
 export const setBestScore = score => ({
   type: SET_BEST_SCORE,
@@ -46,3 +49,14 @@ export const setUserName = name => ({
   type: SET_USERNAME,
   name
 });
+
+export const setErrorMessage = message => {
+  const id = previousErrorId + 1;
+  const action = {
+    type: SET_ERROR_MESSAGE,
+    message,
+    id
+  };
+  previousErrorId = id;
+  return action;
+};
