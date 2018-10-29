@@ -39,10 +39,12 @@ export const processRound = playerSelection => {
       ScoreLogic.isNewBestScore(getState().score.current, getState().score.best)
     ) {
       dispatch(setBestScore(getState().score.current));
-      sendBestScore(getState().score.best, getState().user.accessToken).then(
-        null,
-        () => dispatch(setErrorMessage('Connection to server failed'))
-      );
+      if (getState().user.isAuthenticated) {
+        sendBestScore(getState().score.best, getState().user.accessToken).then(
+          null,
+          () => dispatch(setErrorMessage('Connection to server failed'))
+        );
+      }
     }
   };
 };
