@@ -11,7 +11,8 @@ import {
   setIsAuthenticated,
   setOpponentSelection,
   setRoundResult,
-  setUserName
+  setUserName,
+  setErrorMessage
 } from './actions';
 
 export const processRound = playerSelection => {
@@ -40,7 +41,7 @@ export const processRound = playerSelection => {
       dispatch(setBestScore(getState().score.current));
       sendBestScore(getState().score.best, getState().user.accessToken).then(
         null,
-        error => console.error(error)
+        error => dispatch(setErrorMessage('Connection to server failed'))
       );
     }
   };
@@ -69,13 +70,13 @@ export const responseGoogleSuccess = (response, history) => {
           userName && dispatch(setUserName(userName));
         }
       })
-      .catch(error => console.error(error));
+      .catch(error => dispatch(setErrorMessage('Connection to server failed')));
   };
 };
 
 export const responseGoogleFailure = response => {
   return (dispatch, getState) => {
-    console.error(response.error);
+    dispatch(setErrorMessage(response.error));
   };
 };
 
