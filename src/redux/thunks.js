@@ -41,14 +41,14 @@ export const processRound = playerSelection => {
       dispatch(setBestScore(getState().score.current));
       sendBestScore(getState().score.best, getState().user.accessToken).then(
         null,
-        error => dispatch(setErrorMessage('Connection to server failed'))
+        () => dispatch(setErrorMessage('Connection to server failed'))
       );
     }
   };
 };
 
 export const resetGame = () => {
-  return (dispatch, getState) => {
+  return dispatch => {
     dispatch(setPlayerSelection(null));
     dispatch(setOpponentSelection(null));
     dispatch(setRoundResult(GameStatus.Init));
@@ -57,7 +57,7 @@ export const resetGame = () => {
 };
 
 export const responseGoogleSuccess = (response, history) => {
-  return (dispatch, getState) => {
+  return dispatch => {
     const userName = response.profileObj.givenName;
 
     getTokenAndBestScore(response.accessToken)
@@ -70,18 +70,18 @@ export const responseGoogleSuccess = (response, history) => {
           userName && dispatch(setUserName(userName));
         }
       })
-      .catch(error => dispatch(setErrorMessage('Connection to server failed')));
+      .catch(() => dispatch(setErrorMessage('Connection to server failed')));
   };
 };
 
 export const responseGoogleFailure = response => {
-  return (dispatch, getState) => {
+  return dispatch => {
     dispatch(setErrorMessage(response.error));
   };
 };
 
 export const logout = history => {
-  return (dispatch, getState) => {
+  return dispatch => {
     history.push(routes.home);
     dispatch(setIsAuthenticated(false));
     dispatch(setAccessToken(''));

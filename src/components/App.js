@@ -8,7 +8,7 @@ import ConnectedLoginView from '../containers/ConnectedLoginView';
 import ConnectedErrorAlert from '../containers/ConnectedErrorAlert';
 import './App.css';
 
-const App = props => (
+const App = () => (
   <div className="App">
     <ConnectedNavigationBar />
     <Switch>
