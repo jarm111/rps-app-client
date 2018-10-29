@@ -5,6 +5,7 @@ import ConnectedNavigationBar from '../containers/ConnectedNavigationBar';
 import ConnectedGameView from '../containers/ConnectedGameView';
 import ConnectedMenuView from '../containers/ConnectedMenuView';
 import ConnectedLoginView from '../containers/ConnectedLoginView';
+import ConnectedErrorAlert from '../containers/ConnectedErrorAlert';
 import './App.css';
 
 const App = props => (
@@ -15,6 +16,7 @@ const App = props => (
       <Route path={routes.play} component={ConnectedGameView} />
       <Route path={routes.login} component={ConnectedLoginView} />
     </Switch>
+    <ConnectedErrorAlert />
   </div>
 );
 
