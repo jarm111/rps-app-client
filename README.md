@@ -1,3 +1,11 @@
+# RPS App Client
+
+Rock-paper-scissors game web client program.
+
+## Description
+
+This is my practise project for Web Development 1 2017 course. Made with React & Redux.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
