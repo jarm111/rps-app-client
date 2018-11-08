@@ -19,7 +19,9 @@ You can find the most recent version of Create React App guide [here](https://gi
 
 ## .env.development.local file content example
 
+```
 REACT_APP_GOOGLE_CLIENT_ID=your_google_client_id
 REACT_APP_API_DOMAIN=http://localhost:5000
 REACT_APP_API_AUTH_GOOGLE_ROUTE=/user/auth/google/
 REACT_APP_API_USER_SCORE_ROUTE=/user/score/
+```
