@@ -25,6 +25,7 @@
   "devDependencies": {
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
+    "gh-pages": "^2.0.1",
     "prettier": "1.14.2",
     "redux-devtools-extension": "^2.13.5"
   }
