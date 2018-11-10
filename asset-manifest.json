@@ -1,10 +1,10 @@
 {
   "main.css": "/rps-app-client/static/css/main.7c855327.chunk.css",
-  "main.js": "/rps-app-client/static/js/main.f7c60465.chunk.js",
-  "main.js.map": "/rps-app-client/static/js/main.f7c60465.chunk.js.map",
+  "main.js": "/rps-app-client/static/js/main.471c1672.chunk.js",
+  "main.js.map": "/rps-app-client/static/js/main.471c1672.chunk.js.map",
   "static/css/1.bf8da158.chunk.css": "/rps-app-client/static/css/1.bf8da158.chunk.css",
-  "static/js/1.a186b099.chunk.js": "/rps-app-client/static/js/1.a186b099.chunk.js",
-  "static/js/1.a186b099.chunk.js.map": "/rps-app-client/static/js/1.a186b099.chunk.js.map",
+  "static/js/1.bd9d4a00.chunk.js": "/rps-app-client/static/js/1.bd9d4a00.chunk.js",
+  "static/js/1.bd9d4a00.chunk.js.map": "/rps-app-client/static/js/1.bd9d4a00.chunk.js.map",
   "runtime~main.js": "/rps-app-client/static/js/runtime~main.0ed5ada1.js",
   "runtime~main.js.map": "/rps-app-client/static/js/runtime~main.0ed5ada1.js.map",
   "static/css/main.7c855327.chunk.css.map": "/rps-app-client/static/css/main.7c855327.chunk.css.map",
@@ -13,6 +13,6 @@
   "static/media/paper.svg": "/rps-app-client/static/media/paper.18ca4182.svg",
   "static/css/1.bf8da158.chunk.css.map": "/rps-app-client/static/css/1.bf8da158.chunk.css.map",
   "index.html": "/rps-app-client/index.html",
-  "precache-manifest.24fbe491c1d1b27dc4ff8d6ea22346c8.js": "/rps-app-client/precache-manifest.24fbe491c1d1b27dc4ff8d6ea22346c8.js",
+  "precache-manifest.7a6061edbd6784034cb40e3d4619aea1.js": "/rps-app-client/precache-manifest.7a6061edbd6784034cb40e3d4619aea1.js",
   "service-worker.js": "/rps-app-client/service-worker.js"
 }
