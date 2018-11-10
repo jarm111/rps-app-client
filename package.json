@@ -2,7 +2,7 @@
   "name": "rps-app-client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/jarm111/rps-app-client",
+  "homepage": "https://jarm111.github.io/rps-app-client/",
   "dependencies": {
     "bootstrap": "^4.1.3",
     "enum": "^2.5.0",
