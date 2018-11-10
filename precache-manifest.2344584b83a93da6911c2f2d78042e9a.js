@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/rps-app-client/static/css/1.bf8da158.chunk.css"
   },
   {
-    "revision": "bc7f23a92ac74fa4b3ae8f38e70c47af",
+    "revision": "d74d21690622c67dc5799e196fe4fa48",
     "url": "/rps-app-client/index.html"
   }
 ];
