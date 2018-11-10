@@ -1,9 +1,18 @@
 {
-  "main.css": "static/css/main.71027334.css",
-  "main.css.map": "static/css/main.71027334.css.map",
-  "main.js": "static/js/main.69deaff4.js",
-  "main.js.map": "static/js/main.69deaff4.js.map",
-  "static\\media\\paper.svg": "static/media/paper.18ca4182.svg",
-  "static\\media\\rock.svg": "static/media/rock.5f3bcdf4.svg",
-  "static\\media\\scissors.svg": "static/media/scissors.515fe2fe.svg"
+  "main.css": "/rps-app-client/static/css/main.7c855327.chunk.css",
+  "main.js": "/rps-app-client/static/js/main.84518162.chunk.js",
+  "main.js.map": "/rps-app-client/static/js/main.84518162.chunk.js.map",
+  "static/css/1.bf8da158.chunk.css": "/rps-app-client/static/css/1.bf8da158.chunk.css",
+  "static/js/1.a186b099.chunk.js": "/rps-app-client/static/js/1.a186b099.chunk.js",
+  "static/js/1.a186b099.chunk.js.map": "/rps-app-client/static/js/1.a186b099.chunk.js.map",
+  "runtime~main.js": "/rps-app-client/static/js/runtime~main.0ed5ada1.js",
+  "runtime~main.js.map": "/rps-app-client/static/js/runtime~main.0ed5ada1.js.map",
+  "static/css/main.7c855327.chunk.css.map": "/rps-app-client/static/css/main.7c855327.chunk.css.map",
+  "static/media/rock.svg": "/rps-app-client/static/media/rock.5f3bcdf4.svg",
+  "static/media/scissors.svg": "/rps-app-client/static/media/scissors.515fe2fe.svg",
+  "static/media/paper.svg": "/rps-app-client/static/media/paper.18ca4182.svg",
+  "static/css/1.bf8da158.chunk.css.map": "/rps-app-client/static/css/1.bf8da158.chunk.css.map",
+  "index.html": "/rps-app-client/index.html",
+  "precache-manifest.d60f5d1fbc25751e2c6d918191acf2c2.js": "/rps-app-client/precache-manifest.d60f5d1fbc25751e2c6d918191acf2c2.js",
+  "service-worker.js": "/rps-app-client/service-worker.js"
 }
