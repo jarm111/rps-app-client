@@ -1,6 +1,6 @@
 {
-  "short_name": "RPM MERN App",
-  "name": "Rock-Paper-Scissors MERN App",
+  "short_name": "RPS React App",
+  "name": "Rock-Paper-Scissors React App",
   "icons": [
     {
       "src": "favicon.png",
