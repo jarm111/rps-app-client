@@ -8,7 +8,6 @@ import rootReducer from './redux/reducers';
 import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(
   rootReducer,
@@ -23,5 +22,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-registerServiceWorker();
