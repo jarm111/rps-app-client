@@ -6,6 +6,7 @@ import ConnectedGameView from '../containers/ConnectedGameView';
 import ConnectedMenuView from '../containers/ConnectedMenuView';
 import ConnectedLoginView from '../containers/ConnectedLoginView';
 import ConnectedErrorAlert from '../containers/ConnectedErrorAlert';
+import NoMatch from './NoMatch';
 import './App.css';
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
       <Route exact path={routes.home} component={ConnectedMenuView} />
       <Route path={routes.play} component={ConnectedGameView} />
       <Route path={routes.login} component={ConnectedLoginView} />
+      <Route component={NoMatch} />
     </Switch>
     <ConnectedErrorAlert />
   </div>
