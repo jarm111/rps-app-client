@@ -16,15 +16,15 @@ self.__precacheManifest = [
     "url": "/rps-app-client/static/js/runtime~main.0ed5ada1.js"
   },
   {
-    "revision": "a5c20213a111fba05654",
-    "url": "/rps-app-client/static/js/main.a5c20213.chunk.js"
+    "revision": "fad933422cdd7b77524a",
+    "url": "/rps-app-client/static/js/main.fad93342.chunk.js"
   },
   {
     "revision": "bd9d4a00fb0d643236f3",
     "url": "/rps-app-client/static/js/1.bd9d4a00.chunk.js"
   },
   {
-    "revision": "a5c20213a111fba05654",
+    "revision": "fad933422cdd7b77524a",
     "url": "/rps-app-client/static/css/main.7c855327.chunk.css"
   },
   {
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/rps-app-client/static/css/1.bf8da158.chunk.css"
   },
   {
-    "revision": "286fb55579f0aff9353a127c86bed34d",
+    "revision": "de8b357b16665d896101c454796d813c",
     "url": "/rps-app-client/index.html"
   }
 ];

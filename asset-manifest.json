@@ -1,18 +1,18 @@
 {
   "main.css": "/rps-app-client/static/css/main.7c855327.chunk.css",
-  "main.js": "/rps-app-client/static/js/main.a5c20213.chunk.js",
-  "main.js.map": "/rps-app-client/static/js/main.a5c20213.chunk.js.map",
+  "main.js": "/rps-app-client/static/js/main.fad93342.chunk.js",
+  "main.js.map": "/rps-app-client/static/js/main.fad93342.chunk.js.map",
   "static/css/1.bf8da158.chunk.css": "/rps-app-client/static/css/1.bf8da158.chunk.css",
   "static/js/1.bd9d4a00.chunk.js": "/rps-app-client/static/js/1.bd9d4a00.chunk.js",
   "static/js/1.bd9d4a00.chunk.js.map": "/rps-app-client/static/js/1.bd9d4a00.chunk.js.map",
   "runtime~main.js": "/rps-app-client/static/js/runtime~main.0ed5ada1.js",
   "runtime~main.js.map": "/rps-app-client/static/js/runtime~main.0ed5ada1.js.map",
-  "static/css/main.7c855327.chunk.css.map": "/rps-app-client/static/css/main.7c855327.chunk.css.map",
+  "static/css/1.bf8da158.chunk.css.map": "/rps-app-client/static/css/1.bf8da158.chunk.css.map",
   "static/media/rock.svg": "/rps-app-client/static/media/rock.5f3bcdf4.svg",
   "static/media/scissors.svg": "/rps-app-client/static/media/scissors.515fe2fe.svg",
   "static/media/paper.svg": "/rps-app-client/static/media/paper.18ca4182.svg",
-  "static/css/1.bf8da158.chunk.css.map": "/rps-app-client/static/css/1.bf8da158.chunk.css.map",
+  "static/css/main.7c855327.chunk.css.map": "/rps-app-client/static/css/main.7c855327.chunk.css.map",
   "index.html": "/rps-app-client/index.html",
-  "precache-manifest.a72ef5d248d2ae56e32e28b6a9e00591.js": "/rps-app-client/precache-manifest.a72ef5d248d2ae56e32e28b6a9e00591.js",
+  "precache-manifest.9c9772815a1b16b725c4747be80ce3ab.js": "/rps-app-client/precache-manifest.9c9772815a1b16b725c4747be80ce3ab.js",
   "service-worker.js": "/rps-app-client/service-worker.js"
 }
