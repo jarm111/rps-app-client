@@ -14,7 +14,7 @@ const MenuView = props => (
     </Row>
     <Row className="mb-3">
       <Col>
-        <h5>by Jarmo</h5>
+        <h5>by jarm111</h5>
       </Col>
     </Row>
     <Row className="mb-2">
