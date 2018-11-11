@@ -3,7 +3,8 @@ import MenuView from '../components/MenuView';
 
 const mapStateToProps = state => {
   return {
-    bestScore: state.score.best
+    bestScore: state.score.best,
+    isLoggedIn: state.user.isAuthenticated
   };
 };
 

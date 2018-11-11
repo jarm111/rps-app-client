@@ -27,7 +27,7 @@ const MenuView = props => (
     <Row className="mb-4">
       <Col>
         <Link className="btn btn-info" to={routes.login}>
-          Login
+          {props.isLoggedIn ? 'Log Out' : 'Log In  '}
         </Link>
       </Col>
     </Row>
@@ -38,7 +38,8 @@ const MenuView = props => (
 );
 
 MenuView.propTypes = {
-  bestScore: PropTypes.number.isRequired
+  bestScore: PropTypes.number.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired
 };
 
 export default MenuView;
