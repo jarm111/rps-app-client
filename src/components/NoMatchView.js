@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
 
-const NoMatch = () => (
+const NoMatchView = () => (
   <Container className="mb-4">
     <Row>
       <Col>
@@ -12,4 +12,4 @@ const NoMatch = () => (
   </Container>
 );
 
-export default NoMatch;
+export default NoMatchView;
